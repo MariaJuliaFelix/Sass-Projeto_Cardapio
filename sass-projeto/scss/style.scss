@@ -1,7 +1,10 @@
 @use 'variaveis';
 @use 'mixins';
-@use 'base';
 @use 'card';
+@use 'fixos';
+@use 'banner';
+@use 'sobre';
+
 
 *{
     margin: 0%;
@@ -9,6 +12,6 @@
 }
 
 body{
-    background-color: $cor-principal;
-    font-family: $fonte-principal;
+    background-color: variaveis.$cor-principal;
+    font-family: variaveis.$fonte-principal;
 }

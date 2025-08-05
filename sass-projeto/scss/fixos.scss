@@ -1,14 +1,24 @@
+@use 'variaveis';
+@use 'mixins';
 
 header{
+    padding-top: 20px;
+    padding-bottom: 20px;
+    font-family: variaveis.$fonte-principal;
+    color: variaveis.$cor-titulo;
+    width: 100%;
+    height: auto;
+    background-color: variaveis.$cor-principal;
+    text-align: center;
+    @include mixins.centralizar;
+}
+
+header nav ul {
+    list-style: none;
     display: flex;
-    font-family: $fonte-principal;
-    color: $cor-titulo;
-    background-color: $cor-principal;
-    @include centralizar;
+    gap: 20px;
 }
 
 footer{
     @extend header; 
-    @include centralizar;
-    margin-top: 10px;
 }
