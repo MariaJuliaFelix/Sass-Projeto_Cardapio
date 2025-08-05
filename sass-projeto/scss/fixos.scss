@@ -1,0 +1,14 @@
+
+header{
+    display: flex;
+    font-family: $fonte-principal;
+    color: $cor-titulo;
+    background-color: $cor-principal;
+    @include centralizar;
+}
+
+footer{
+    @extend header; 
+    @include centralizar;
+    margin-top: 10px;
+}
