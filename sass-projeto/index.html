@@ -6,6 +6,8 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <link rel="stylesheet" href="css/style.css">
     <title>Sass Projeto</title>
 </head>
@@ -21,72 +23,59 @@
     </header>
     <main>
         <div class="banner">
-            <img src="img/banner/Banner Hamburgueria Moderno Laranja, Branco e Amarelo.png">
+            <img  id="banner-img" src="img/banner/banner1.png">
         </div>
+       
         <div class="sobre">
             <div class="conteudo">
             <h3>Sobre nós</h3>
-            <p>No nosso restaurante, cada prato conta uma história.<br>
-            Somos apaixonados por sabores autênticos, ingredientes frescos e uma boa refeição compartilhada. Mais do que um lugar para comer, queremos ser um espaço onde você se sinta em casa   display: flex;, saboreando cada momento com quem ama.
+            <p class="texto-destaque">No nosso restaurante, cada prato conta uma história.</p>
+            <p>Somos apaixonados por sabores autênticos, ingredientes frescos e uma boa refeição compartilhada. Mais do que um lugar para comer, queremos ser um espaço onde você se sinta em casa, saboreando cada momento com quem ama.</p>
+            <p>Nosso cardápio foi pensado com carinho para agradar todos os paladares desde os clássicos que aquecem o coração até as novidades que surpreendem.
+            Tudo é feito com atenção aos detalhes, do atendimento à apresentação dos pratos.</p>
             <br>
-            Nosso cardápio foi pensado com carinho para agradar todos os paladares desde os clássicos que aquecem o coração até as novidades que surpreendem.
-            Tudo é feito com atenção aos detalhes, do atendimento à apresentação dos pratos.
-            <br>
-            Seja bem-vindo(a) e aproveite sua experiência conosco!</p>
+            <p class="texto-destaque">Seja bem-vindo(a) e aproveite sua experiência conosco!</p>
             </div>
             <div class="imagem-sobre">
-                <img src="img/sobre/Post para Instagram Moderno Branco e Laranja  Amigas Drink Bar e Restaurante .png">
+                <img src="img/sobre/sobre-image.png">
             </div>
         </div>
-        <div class="cardapio">
-            <div class="fileira1">
-            <div class="card">
-                <p class="titulo-card">Frango Grelhado</p>
-                <img src="img/cards/frango-grelhado.png">
-                <p class="card-sobre" hidden>Frango grelhado suculento servido com espaguete e legumes da estação.</p>
-            </div>
-            <div class="card">
-                <p class="titulo-card">Frango Grelhado</p>
-                <img src="img/cards/frango-grelhado.png">
-                <p class="card-sobre" hidden>Frango grelhado suculento servido com espaguete e legumes da estação.</p>
-            </div>
-            <div class="card">
-                <p class="titulo-card">Frango Grelhado</p>
-                <img src="img/cards/frango-grelhado.png">
-                <p class="card-sobre" hidden>Frango grelhado suculento servido com espaguete e legumes da estação.</p>
-            </div>
-             <div class="card">
-                <p class="titulo-card">Frango Grelhado</p>
-                <img src="img/cards/frango-grelhado.png">
-                <p class="card-sobre" hidden>Frango grelhado suculento servido com espaguete e legumes da estação.</p>
-            </div>
-            </div>
-            <div class="fileira2">
-                <div class="card">
-                <p class="titulo-card">Frango Grelhado</p>
-                <img src="img/cards/frango-grelhado.png">
-                <p class="card-sobre" hidden>Frango grelhado suculento servido com espaguete e legumes da estação.</p>
-            </div>
-            <div class="card">
-                <p class="titulo-card">Frango Grelhado</p>
-                <img src="img/cards/frango-grelhado.png">
-                <p class="card-sobre" hidden>Frango grelhado suculento servido com espaguete e legumes da estação.</p>
-            </div>
-            <div class="card">
-                <p class="titulo-card">Frango Grelhado</p>
-                <img src="img/cards/frango-grelhado.png">
-                <p class="card-sobre" hidden>Frango grelhado suculento servido com espaguete e legumes da estação.</p>
-            </div>
-             <div class="card">
-                <p class="titulo-card">Frango Grelhado</p>
-                <img src="img/cards/frango-grelhado.png">
-                <p class="card-sobre" hidden>Frango grelhado suculento servido com espaguete e legumes da estação.</p>
-            </div>
-            </div>
+      <div class="insta-img">
+            <img src="img/insta/img1.png">
+            <img src="img/insta/img2.png">
+            <img src="img/insta/img3.png">
+            <img src="img/insta/img4.png">
         </div>
+        
     </main>
-    <footer>
-        <p>Todos os direitos reservados - Feito por Maria Julia Felix</p>
-    </footer>
+   <footer class="footer">
+        <div class="footer-content">
+          
+          <nav class="footer-menu">
+            <a href="#">Inicial</a>
+            <a href="#">Sobre</a>
+            <a href="#">Comprar</a>
+            <a href="#">Contato</a>
+      
+          </nav>
+      
+          <div class="footer-apps">
+            <a href="#"><img src="https://developer.apple.com/assets/elements/badges/download-on-the-app-store.svg" alt="App Store"></a>
+            <a href="#"><img src="https://upload.wikimedia.org/wikipedia/commons/7/78/Google_Play_Store_badge_EN.svg" alt="Google Play"></a>
+          </div>
+      
+          <div class="footer-socials">
+            <a href="#"><img src="https://cdn-icons-png.flaticon.com/512/1384/1384005.png" alt="Facebook"></a>
+            <a href="#"><img src="https://cdn-icons-png.flaticon.com/512/1384/1384015.png" alt="Instagram"></a>
+            <a href="#"><img src="https://cdn-icons-png.flaticon.com/512/733/733635.png" alt="Twitter"></a>
+          </div>
+      
+          <p class="footer-credit"> Feito por <strong>Maria Julia Felix</strong></p>
+        </div>
+      </footer>
+      <script>
+        AOS.init();
+      </script>
+    <script src="js/script.js"></script>
 </body>
 </html>

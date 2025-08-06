@@ -1,24 +1,105 @@
 @use 'variaveis';
 @use 'mixins';
 
-header{
-    padding-top: 20px;
-    padding-bottom: 20px;
-    font-family: variaveis.$fonte-principal;
-    color: variaveis.$cor-titulo;
-    width: 100%;
-    height: auto;
-    background-color: variaveis.$cor-principal;
-    text-align: center;
-    @include mixins.centralizar;
+header {
+  font-family: variaveis.$fonte-principal;
+  color: variaveis.$cor-titulo;
+  position: absolute;
+  top: 20px; 
+  left: 0;
+  width: 100%;
+  z-index: 2;
+  display: flex; 
+  justify-content: center;
 }
 
 header nav ul {
-    list-style: none;
-    display: flex;
-    gap: 20px;
+  list-style: none;
+  display: flex;
+  gap: 20px;
+  padding: 0;
+  margin: 0;
+}
+
+li {
+  background-color: orange;
+  box-shadow: rgba(56, 56, 56, 0.753) 1px 0px 10px 1px;
+  padding: 7px 35px;
+  border-radius: 30px;  
+  z-index: 1;
 }
 
 footer{
-    @extend header; 
+    @include mixins.centralizar;
+    padding: 30px;
+    box-shadow: rgba(20, 20, 20, 0.26) 1px 0px 10px 1px;
+    background-color: #fff;
+    border-top: 1px solid #e5e7eb;
+    padding: 40px 20px;
+    text-align: center;
+  
+  .footer-content {
+    max-width: 1000px;
+    margin: 0 auto;
+  }
+  
+  
+  .footer-menu {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+    margin-bottom: 40px;
+  }
+  
+  .footer-menu a {
+    color: #333;
+    text-decoration: none;
+    transition: color 0.3s;
+  }
+  
+  .footer-menu a:hover {
+    color: #6395f1;
+  }
+  
+  .footer-apps {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+  
+    margin-top: 50px;
+  }
+  
+  .footer-apps img {
+    height: 45px;
+  }
+  
+  .footer-socials {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-bottom: 50px;
+    margin-top: 50px;
+  }
+  
+  .footer-socials a {
+    display: inline-block;
+    background-color: #f3f4f6;
+    padding: 10px;
+    border-radius: 8px;
+    transition: background-color 0.3s;
+  }
+  
+  .footer-socials a:hover {
+    background-color: #ffa600;
+  }
+  
+  .footer-socials img {
+    height: 25px;
+  }
+  
+  .footer-credit {
+    color: #6b7280;
+    font-size: 0.9rem;
+  }
 }

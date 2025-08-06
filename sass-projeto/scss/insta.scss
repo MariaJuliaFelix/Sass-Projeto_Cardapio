@@ -1,0 +1,15 @@
+@use 'mixins';
+
+.insta-img{
+    width: 100%;
+    padding-top: 4rem;
+    padding-bottom: 4rem;
+    gap: 10px;
+    background-color: #FF9B2F;
+    @include mixins.centralizar;
+
+    img{
+        width: 310px;
+        height: 310px;
+    }
+}

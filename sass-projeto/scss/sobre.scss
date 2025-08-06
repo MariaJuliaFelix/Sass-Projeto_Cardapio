@@ -1,18 +1,40 @@
-
-
-.sobre{
-    width: 100vw;
-    height: 60vh;
-    display: flex;
-    justify-content: space-between;
+@use 'mixins';
+.sobre {
+  display: flex;
+  justify-content: center;    
+  align-items: center;        
+  gap: 15rem;                   
+  height: 70vh;              
+  background-color: antiquewhite;
+  padding: 0 2rem;             
 }
 
-.conteudo{
-    width: 40%;
-    padding-left: 50px;
+.conteudo {
+  width: 40%;
+  text-align: left;
+  padding-bottom: 1rem;
 }
 
-.imagem-sobre img{
-    width: 90%;
-    height: 90%;
+.conteudo h3 {
+  @include mixins.titulo;
+  padding-bottom: 2rem
+}
+
+.conteudo p{
+    font-size: 1.2rem;
+    padding-top: 3px;
+}
+
+.imagem-sobre img {
+  width: 500px;              
+  height: 500px;
+  object-fit: cover;
+  border-radius: 50%;
+  box-shadow: rgba(56, 56, 56, 0.753) 1px 0px 10px 1px;
+}
+
+.conteudo .texto-destaque{
+    color: rgb(255, 102, 0);
+    font-size: 1.4rem;
+    font-weight: 600;
 }

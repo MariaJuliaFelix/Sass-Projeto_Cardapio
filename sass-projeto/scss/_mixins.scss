@@ -3,3 +3,19 @@ display: flex;
 justify-content: center;
 align-items: center;
 }
+
+@mixin titulo {
+    font-size: 3rem;
+    color: #FF6202;
+}
+
+@mixin paragrafo {
+    font-size: 1.2rem;
+    color: rgb(49, 49, 49);
+}
+
+@mixin titulo-card {
+    font-size: 1.3rem;
+    color: #0f0f0fe8;
+}
+
