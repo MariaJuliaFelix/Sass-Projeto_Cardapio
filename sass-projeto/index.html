@@ -9,15 +9,15 @@
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <link rel="stylesheet" href="css/style.css">
-    <title>Sass Projeto</title>
+    <title>Sass Projeto Teste</title>
 </head>
 <body>
     <header>
         <nav>
             <ul>
-                <li>Inicio</li>
-                <li>Sobre</li>
-                <li>Cardapio</li>
+                <li><a href="#banner-img">Inicio</a></li>
+                <li><a href="#sobre">Sobre</a></li>
+                <li><a href="#insta">Redes Sociais</a></li>
             </ul>
         </nav>
     </header>
@@ -26,8 +26,8 @@
             <img  id="banner-img" src="img/banner/banner1.png">
         </div>
        
-        <div class="sobre">
-            <div class="conteudo">
+        <div class="sobre" id="sobre">
+            <div class="conteudo"  data-aos="fade-right">
             <h3>Sobre nós</h3>
             <p class="texto-destaque">No nosso restaurante, cada prato conta uma história.</p>
             <p>Somos apaixonados por sabores autênticos, ingredientes frescos e uma boa refeição compartilhada. Mais do que um lugar para comer, queremos ser um espaço onde você se sinta em casa, saboreando cada momento com quem ama.</p>
@@ -36,17 +36,26 @@
             <br>
             <p class="texto-destaque">Seja bem-vindo(a) e aproveite sua experiência conosco!</p>
             </div>
-            <div class="imagem-sobre">
+            <div class="imagem-sobre"  data-aos="fade-left">
                 <img src="img/sobre/sobre-image.png">
             </div>
         </div>
-      <div class="insta-img">
-            <img src="img/insta/img1.png">
-            <img src="img/insta/img2.png">
-            <img src="img/insta/img3.png">
-            <img src="img/insta/img4.png">
-        </div>
-        
+     <div id="insta" class="insta-img" data-aos="fade-up"
+     data-aos-anchor-placement="top-bottom" id="insta">
+      <div class="image-wrapper">
+        <img src="img/insta/img1.png" alt="Imagem 1">
+      </div>
+      <div class="image-wrapper">
+        <img src="img/insta/img2.png" alt="Imagem 2">
+      </div>
+      <div class="image-wrapper">
+        <img src="img/insta/img3.png" alt="Imagem 3">
+      </div>
+      <div class="image-wrapper">
+        <img src="img/insta/img4.png" alt="Imagem 4">
+      </div>
+    </div>
+
     </main>
    <footer class="footer">
         <div class="footer-content">
