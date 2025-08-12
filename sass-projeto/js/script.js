@@ -12,15 +12,32 @@ setInterval(() => {
 // irei apenas usar GET, POST e PATCH
 
 
+async function getMenu() {
+    try {
+        const response = await fetch("https://d41d75f43ca7.ngrok-free.app/restaurant/menu", {
+            method: 'GET',
+            headers: {
+                'ngrok-skip-browser-warning': true,
+                'Content-Type': 'application/json'
+            }
+        });
 
-fetch("https://d41d75f43ca7.ngrok-free.app/restaurant/menu", {
-    method: 'GET',
-    headers: {
-        'ngrok-skip-browser-warning': true, //acesso no servidor local
-        'Content-Type': 'application/json' //tipo de dado que vou receber
-        }
-      
-})
-.then(response => response)
-.then(response => resolve(response.json())) //extrai o json
-.catch(err => console.log(err)); // erros serao mostrados no console, fins de debug
+        const data = await response.json();
+        renderMenu(data);
+    } catch (err) {
+        console.error(err);
+    }
+}
+
+function renderMenu(items) {
+    const containerMenu = document.querySelector("#container_menu");
+
+    containerMenu.innerHTML = items.map(item => `
+        <div class="card-menu">
+            <img src="${item.url_banner}" alt="${item.description}">
+            <p>${item.description}</p>
+        </div>
+    `).join("");
+}
+
+getMenu();
