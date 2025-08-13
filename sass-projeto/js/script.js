@@ -21,9 +21,9 @@ async function getMenu() {
 
         const data = await response.json();
         renderMenu(data);
-        attachButtonEvents(); 
-    } catch (err) {
-        console.error(err);
+        buttonInformations(); 
+    } catch (erro) {
+        console.error(erro);
     }
 }
 
@@ -39,7 +39,7 @@ function renderMenu(items) {
     ).join("");
 }
 
-function attachButtonEvents() {
+function buttonInformations() {
     const buttons = document.querySelectorAll(".button-comprar");
     const modal = document.getElementById("meuModal");
     const btnFechar = modal.querySelector(".fechar");
@@ -70,8 +70,8 @@ function attachButtonEvents() {
 
                 modal.style.display = "block";
 
-            } catch (err) {
-                console.error(err);
+            } catch (erro) {
+                console.error(erro);
             }
         });
     });
