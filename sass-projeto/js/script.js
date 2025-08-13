@@ -9,9 +9,6 @@ setInterval(() => {
 }, 5000); 
 
 
-// irei apenas usar GET, POST e PATCH
-
-
 async function getMenu() {
     try {
         const response = await fetch("https://d41d75f43ca7.ngrok-free.app/restaurant/menu", {
@@ -22,46 +19,68 @@ async function getMenu() {
             }
         });
 
-        const data = await response.json(); //extrai o json
+        const data = await response.json();
         renderMenu(data);
+        attachButtonEvents(); 
     } catch (err) {
-        console.error(err); //conseguir ver o error no console
+        console.error(err);
     }
 }
 
 function renderMenu(items) {
     const containerMenu = document.querySelector("#container_menu");
-
-    containerMenu.innerHTML = items.map(item => //.map é pra transformar todos os itens em array
-        ` 
-        <div class="card-menu">
+    containerMenu.innerHTML = items.map(item =>
+        `<div class="card-menu">
             <img src="${item.url_banner}" alt="${item.description}">
             <p class="descricao">${item.description}</p>
             <p class="valor">R$ ${item.price}</p>
-            <button class="button-comprar" id="button-info">Comprar</button>
-        </div>
-    `).join(""); //.join junta os pedaços de html pra ficarem um unico texto
+            <button class="button-comprar" data-id="${item.id}">Comprar</button>
+        </div>`
+    ).join("");
+}
+
+function attachButtonEvents() {
+    const buttons = document.querySelectorAll(".button-comprar");
+    const modal = document.getElementById("meuModal");
+    const btnFechar = modal.querySelector(".fechar");
+    const modalContent = modal.querySelector(".modal-content"); 
+
+    buttons.forEach(button => {
+        button.addEventListener("click", async function () {
+            const id = this.dataset.id;
+
+            try {
+                const response = await fetch(`https://d41d75f43ca7.ngrok-free.app/restaurant/product/${id}`, {
+                    method: 'GET',
+                    headers: {
+                        'ngrok-skip-browser-warning': true,
+                        'Content-Type': 'application/json'
+                    }
+                });
+
+                const data = await response.json();
+
+                modalContent.innerHTML = `
+                    <h2>${data.description}</h2>
+                    <img src="${data.url_banner}" alt="${data.description}">
+               
+                    <p>R$ ${data.price}</p>
+
+                `;
+
+                modal.style.display = "block";
+
+            } catch (err) {
+                console.error(err);
+            }
+        });
+    });
+
+    btnFechar.onclick = () => modal.style.display = "none";
+
+    window.onclick = (event) => {
+        if (event.target === modal) modal.style.display = "none";
+    };
 }
 
 getMenu();
-
-async function getInformation() {
-    try {
-        const response = await fetch("https://d41d75f43ca7.ngrok-free.app/restaurant/product/{id}", {
-            method: 'GET',
-            headers: {
-                'ngrok-skip-browser-warning': true,
-                'Content-Type': 'application/json'
-            }
-        });
-
-        document.getElementById("button-info").addEventListener("click", function() {
-            const response = await fetch("https://d41d75f43ca7.ngrok-free.app/restaurant/product/{id}");
-        });
-
-        const data = await response.json(); 
-        renderMenu(data);
-    } catch (err) {
-        console.error(err);
-    }
-}
