@@ -1,5 +1,8 @@
 @media (max-width: 768px) {
-
+.container-menu{
+  margin: 0;
+  padding: 0%;
+}
     body{
         background-color: antiquewhite;
     }
@@ -84,6 +87,11 @@ li{
 }
 
 @media (max-width: 1024px) {
+.container-menu{
+  margin: 0;
+  padding: 0%;
+}
+
   .sobre {
     flex-direction: column;
     gap: 2rem;
