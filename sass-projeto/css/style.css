@@ -305,8 +305,8 @@ footer .footer-credit {
   flex-wrap: wrap;
   gap: 50px;
   height: 80vh;
-  padding-top: 3rem;
-  padding-bottom: 3rem;
+  padding-top: 7rem;
+  padding-bottom: 7rem;
   z-index: 1;
   position: relative;
   padding-left: 15rem;
@@ -319,7 +319,7 @@ footer .footer-credit {
   border-radius: 10px;
   padding: 15px;
   width: 290px;
-  height: 280px;
+  height: 330px;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
   display: flex;
   flex-direction: column;
@@ -333,58 +333,75 @@ footer .footer-credit {
 }
 
 .card-menu img {
-  width: 200px;
-  height: 210px;
+  width: 210px;
+  height: 230px;
   object-fit: cover;
-  border-radius: 8px;
 }
 
 .descricao {
   margin-bottom: 5px;
   font-size: 18px;
+  font-weight: 600;
   text-align: center;
 }
 
 .valor {
-  font-weight: 600;
-  font-size: 20px;
+  font-weight: 400;
+  font-size: 17px;
 }
 
 .button-comprar {
-  background-color: rgb(255, 216, 165);
-  padding: 8px 30px 8px 30px;
+  background-color: rgb(255, 229, 196);
+  padding: 8px 45px 8px 45px;
   text-align: center;
   justify-content: center;
   border: solid rgba(0, 0, 0, 0.356) 1px;
   border-radius: 12px;
-  font-size: 15px;
-  margin: 5px;
+  font-size: 16px;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+}
+
+.button-comprar:hover {
+  background-color: rgb(255, 200, 120);
+  transform: scale(1.01);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.115);
+  transition: all 0.3s ease;
+  cursor: pointer;
 }
 
 .modal {
   display: none;
   position: fixed;
+  display: block;
   z-index: 2;
   left: 0;
+  width: 100vw;
+  height: 100vh;
   top: 0;
-  width: 100%;
-  height: 100%;
+  justify-content: center;
   overflow: auto;
   background-color: rgba(0, 0, 0, 0.4);
 }
 
 .modal-content {
   background-color: #fefefe;
-  margin: 15% auto;
   padding: 20px;
-  border: 1px solid #888;
-  width: 80%;
+  margin: 0%;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  border-radius: 10px;
+  box-shadow: rgba(34, 34, 34, 0.537254902) 1px 1px 7px 1px;
+  width: 30%;
+  height: auto;
 }
 
 .fechar {
-  color: #aaa;
+  color: #0a0a0a;
   float: right;
-  font-size: 28px;
+  margin: 10px;
+  font-size: 4rem;
   font-weight: bold;
 }
 
@@ -393,6 +410,13 @@ footer .footer-credit {
   color: black;
   text-decoration: none;
   cursor: pointer;
+}
+
+.img-information {
+  justify-content: center;
+  align-items: center;
+  width: 450px;
+  height: 350px;
 }
 
 * {

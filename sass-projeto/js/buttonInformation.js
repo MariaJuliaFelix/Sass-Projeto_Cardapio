@@ -23,15 +23,15 @@ export function buttonInformations() {
 
                 modalContent.innerHTML = `
                     <h2>${data.description}</h2>
-                    <img src="${data.url_banner}" alt="${data.description}">
+                    <img class="img-information" src="${data.url_banner}" alt="${data.description}">
                
-                    <p>${price(data.price)}</p>
+                    <h3>${price(data.price)}</h3>
             
-                    <h4>Metodo de envio</h4>
+                    <h4>Método de envio</h4>
                     <select id="envio">
-                        <option>Escolha o metodo de envio</option>
-                        <option value="delivery">Entrega</option>
-                        <option value="establishment">Retirada</option>
+                        <option>Escolha o método de envio</option>
+                        <option id="delivey" value="delivery">Entrega</option>
+                        <option id="establishment" value="establishment">Retirada</option>
                     </select>
                     
                 `;
