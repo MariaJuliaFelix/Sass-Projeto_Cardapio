@@ -11,10 +11,11 @@ setInterval(() => {
 
 import { renderMenu } from "./renderMenu.js";
 import { buttonInformations } from "./buttonInformation.js";
+import { URL_BASE_API } from "./domain.js";
 
 async function getMenu() {
     try {
-        const response = await fetch("https://d41d75f43ca7.ngrok-free.app/restaurant/menu", {
+        const response = await fetch(`${URL_BASE_API}/restaurant/menu`, {
             method: 'GET',
             headers: {
                 'ngrok-skip-browser-warning': true,

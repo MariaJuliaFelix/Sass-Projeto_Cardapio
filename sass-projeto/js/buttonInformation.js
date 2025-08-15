@@ -1,3 +1,4 @@
+import { price } from "./services.js";
 
 export function buttonInformations() {
     const buttons = document.querySelectorAll(".button-comprar");
@@ -24,11 +25,13 @@ export function buttonInformations() {
                     <h2>${data.description}</h2>
                     <img src="${data.url_banner}" alt="${data.description}">
                
-                    <p>R$ ${data.price}</p>
+                    <p>${price(data.price)}</p>
             
                     <h4>Metodo de envio</h4>
                     <select id="envio">
-                        <option>Escolha o envio</option>
+                        <option>Escolha o metodo de envio</option>
+                        <option value="delivery">Entrega</option>
+                        <option value="establishment">Retirada</option>
                     </select>
                     
                 `;
