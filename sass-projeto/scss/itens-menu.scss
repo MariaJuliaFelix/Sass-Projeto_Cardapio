@@ -72,53 +72,97 @@
     cursor: pointer; 
 }
 
+.modal {
+  display: none; 
+  position: fixed;
+  z-index: 2;
+  left: 0;
+  top: 0;
+  width: 100vw;
+  height: 100vh;
+  justify-content: center;
+  align-items: center; 
+  background-color: rgba(0,0,0,0.4);
+  display: flex;  
+  justify-content: center; 
+  align-items: center;
+}
 
+.modal-content {
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: #22222289 1px 1px 7px 1px;
+  width: 600px; 
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center; 
+  text-align: center; 
+  position: relative;
+}
 
-   .modal {
-     display: none; 
-     position: fixed;
-     display: block;
-     z-index: 2;
-     left: 0;
-     width: 100vw;
-     height: 100vh;
-     top: 0;
-     justify-content: center;
-     overflow: auto;
-     background-color: rgba(0,0,0,0.4);
-   }
+.fechar {
+  position: absolute;
+  top: 10px;
+  right: 15px;
+  font-size: 22px;
+  font-weight: bold;
+  color: #313131de;
+  cursor: pointer;
+}
 
-   .modal-content {
-     background-color: #fefefe;
-     padding: 20px;
-     margin: 0%;
-     justify-content: center;
-     align-items: center;
-     text-align: center;
-     border-radius: 10px;
-     box-shadow: #22222289 1px 1px 7px 1px;
-     width: 30%;
-     height: auto;
-   }
+.img-information {
+  width: 400px;
+  height: auto;
+  margin: 20px 0;
+  border-radius: 8px;
+  object-fit: cover;
+}
+.select-lista{
+    position: relative;
+    @include mixins.centralizar;
+    margin-left: 5rem;
+    margin-top: 1rem;
+    width: 250px;
+}
 
-   .fechar {
-     color: #0a0a0a;
-     float: right;
-     margin: 10px;
-     font-size: 4rem;
-     font-weight: bold;
-   }
+.select-lista select {
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    width: 100%;
+    padding: 12px 40px 12px 15px;
+    border-radius: 12px;
+    border: 1px solid #ccc;
+    background: linear-gradient(145deg, #ffffff, #f0f0f0);
+    font-size: 16px;
+    color: #333;
+    cursor: pointer;
+}
 
-   .fechar:hover,
-   .fechar:focus {
-     color: black;
-     text-decoration: none;
-     cursor: pointer;
-   }
+.select-lista::after {
+    content: "▼";
+    position: absolute;
+    right: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #555;
+    pointer-events: none;
+    font-size: 12px;
+}
 
-   .img-information{
-    justify-content: center;
-    align-items: center;
-    width: 450px;
-    height: 350px;
-   }
+select:hover {
+    border-color: #888;
+    background-color: #f9f9f9;
+}
+
+option {
+    background-color: #fff;
+    color: #333;
+    padding: 10px;
+}
+
+option:hover {
+    background-color: #f0f0f0;
+    color: #000;
+}

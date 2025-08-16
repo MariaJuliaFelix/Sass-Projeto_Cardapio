@@ -18,9 +18,6 @@ import { URL_BASE_API } from "./domain";
 
 import { URL_BASE_API } from "./domain.js";
 
-
-import { URL_BASE_API } from "./domain.js";
-
 export async function metodoSend(delivery, establishment) {
     try {
        
