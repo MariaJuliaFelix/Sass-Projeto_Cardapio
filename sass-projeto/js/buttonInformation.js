@@ -6,6 +6,7 @@ export function buttonInformations() {
   const span = modal.querySelector(".fechar");   
   const modalBody = modal.querySelector("#modal-body"); 
 
+
   buttons.forEach(button => {
     button.addEventListener("click", async function () {
       const id = this.dataset.id;
@@ -38,6 +39,20 @@ export function buttonInformations() {
                 <option value="establishment">Retirada</option>
             </select>
             </div>
+            <div class="forma_de_pagamento">
+              <h2> Forma do pagamento</h2>
+              <div class="cartao>
+              <input id="credit_card_name"></input>
+              <input id="credit_card_number"></input>
+              <input id="credit_card_date_expiration"></input>
+              <input id="credit_card_code"></input>
+              </div> 
+              
+            <select class="select-lista">
+              <option value="delivery">Entrega</option>
+              <option value="establishment">Retirada</option>
+              </select> 
+            </div> 
 
         `;
 

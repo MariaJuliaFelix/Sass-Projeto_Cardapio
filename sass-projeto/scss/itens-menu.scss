@@ -118,6 +118,7 @@
   border-radius: 8px;
   object-fit: cover;
 }
+
 .select-lista{
     position: relative;
     @include mixins.centralizar;
@@ -165,4 +166,15 @@ option {
 option:hover {
     background-color: #f0f0f0;
     color: #000;
+}
+
+.forma_de_pagamento{
+    justify-content: center;
+    align-items: center;
+
+}
+
+.cartão{
+    display: list-item;
+    width: 50%;
 }

@@ -469,6 +469,16 @@ option:hover {
   color: #000;
 }
 
+.forma_de_pagamento {
+  justify-content: center;
+  align-items: center;
+}
+
+.cartão {
+  display: list-item;
+  width: 50%;
+}
+
 * {
   margin: 0%;
   padding: 0%;
