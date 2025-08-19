@@ -1,0 +1,72 @@
+@use 'mixins';
+
+.container-menu {
+    @include mixins.centralizar;
+    flex-wrap: wrap;
+    gap: 50px;
+    height: 80vh;
+    padding-top: 7rem;
+    padding-bottom: 7rem;
+    z-index: 1;
+    position: relative;
+    padding-left: 15rem;
+    padding-right: 15rem;
+    background-color: rgb(252, 130, 73);
+}
+
+.card-menu {
+    background-color: white;
+    border-radius: 10px;
+    padding: 15px;
+    width: 290px;
+    height: 330px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    transition: transform 0.5s ease, box-shadow 0.3s ease;
+}
+
+.card-menu:hover {
+    transform: scale(1.1);
+    box-shadow: 0 6px 14px rgba(0, 0, 0, 0.315);
+}
+
+.card-menu img {
+    width: 210px;
+    height: 230px;
+    object-fit: cover;
+  
+}
+
+.descricao {
+    margin-bottom: 5px;
+    font-size: 18px;
+    font-weight: 600;
+    text-align: center;
+}
+
+.valor{
+    font-weight: 400;
+    font-size: 17px;
+}
+
+.button-comprar{
+    background-color: rgb(255, 229, 196);
+    padding: 8px 45px 8px 45px;
+    text-align: center;
+    justify-content: center;
+    border: solid rgba(0, 0, 0, 0.356) 1px;
+    border-radius: 12px;
+    font-size: 16px;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+}
+
+.button-comprar:hover {
+    background-color: rgb(255, 200, 120); 
+    transform: scale(1.01); 
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.115);
+    transition: all 0.3s ease; 
+    cursor: pointer; 
+}

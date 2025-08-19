@@ -1,0 +1,112 @@
+
+.img-information {
+  width: 100%;
+  max-width: 420px;
+  height: auto;
+  margin: 25px 0;
+  border-radius: 15px;
+  object-fit: cover;
+  box-shadow: 0 8px 20px rgba(104, 103, 103, 0.356);
+}
+
+.forma_de_pagamento {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  padding: 25px;
+  background: #fefefe;
+  border-radius: 20px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.164);
+  width: 90%;
+  max-width: 450px;
+  margin: 25px 0;
+}
+
+.forma_de_pagamento h2 {
+  font-size: 22px;
+  color: #222;
+  margin-bottom: 15px;
+  font-weight: 700;
+  text-align: center;
+}
+
+.cartao {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  width: 100%;
+}
+
+.cartao input {
+  padding: 16px 18px;
+  border-radius: 14px;
+  border: 1px solid #ccc;
+  font-size: 16px;
+  background: #f9f9f9;
+  box-shadow: inset 2px 2px 6px rgba(0,0,0,0.03);
+  transition: all 0.3s ease;
+}
+
+.cartao input:focus {
+  border-color: #ff7a59;
+  background: #fff;
+  box-shadow: 0 0 10px rgba(255,122,89,0.3);
+  outline: none;
+}
+
+.select-lista {
+  width: 100%;
+  position: relative;
+}
+
+.select-lista select {
+  width: 100%;
+  padding: 14px 18px;
+  border-radius: 14px;
+  border: 1px solid #ccc;
+  font-size: 16px;
+  background: #f9f9f9;
+  cursor: pointer;
+  appearance: none;
+  transition: all 0.3s ease;
+}
+
+.select-lista::after {
+  content: "▼";
+  position: absolute;
+  right: 20px;
+  top: 50%;
+  transform: translateY(-50%);
+  pointer-events: none;
+  color: #999;
+  font-size: 14px;
+}
+
+.select-lista select:focus {
+  border-color: #ff7a59;
+  box-shadow: 0 0 10px rgba(255,122,89,0.3);
+  outline: none;
+}
+
+
+
+.button-finalizar{
+    background-color: rgb(255, 229, 196);
+    padding: 10px 45px 10px 45px;
+    text-align: center;
+    justify-content: center;
+    border: solid rgba(0, 0, 0, 0.178) 1px;
+    border-radius: 12px;
+    font-size: 16px;
+    width: 100%;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+}
+
+.button-finalizar:hover {
+    background-color: rgb(255, 200, 120); 
+    transform: scale(1.01); 
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.115);
+    transition: all 0.3s ease; 
+    cursor: pointer; 
+}

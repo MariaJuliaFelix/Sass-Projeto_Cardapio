@@ -5,7 +5,10 @@
 @use 'sobre';
 @use 'insta';
 @use 'responsivo';
-@use 'itens-menu';
+@use 'rendermenu';
+@use 'loading';
+@use 'modal';
+@use 'informations';
 
 *{
     margin: 0%;
