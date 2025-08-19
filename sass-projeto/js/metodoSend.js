@@ -11,19 +11,13 @@ export async function metodoSend() {
 
         if (data.pick_up_with_delivery == true) {
             const deliveryElement = document.getElementById('delivery');
-            if (deliveryElement==true) {
+            if (data.pick_up_with_establishment == true) {
                 console.log
             }
-        } else {
+         else {
              deliveryElement.remove();
         }
-
-        if (data.pick_up_with_establishment == true) {
-            const establishmentElement = document.getElementById('establishment');
-            if (establishmentElement==true) {
-                console.log
-            }
-        } else {
+     } else {
              establishmentElement.remove();
         }
 
