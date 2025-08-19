@@ -1,24 +1,7 @@
-//estudar e pensar mais antes de continuarrr aaa
-
-import { URL_BASE_API } from "./domain";
-
-// export function metodo() {
-
-//     const entrega = document.querySelectorAll('#entrega')
-//     const retirada = document.querySelectorAll('#retirada')
-
-// if(entrega == true){
-//       const response = await fetch("https://d41d75f43ca7.ngrok-free.app/restaurant/menu", {
-//             method: 'GET',
-//             headers: {
-//                 'ngrok-skip-browser-warning': true,
-//                 'Content-Type': 'application/json'
-//             }
-// } 
 
 import { URL_BASE_API } from "./domain.js";
 
-export async function metodoSend(delivery, establishment) {
+export async function metodoSend() {
     try {
        
         const response = await fetch(`${URL_BASE_API}/restaurant/product/`);
@@ -28,17 +11,35 @@ export async function metodoSend(delivery, establishment) {
 
         if (data.pick_up_with_delivery == true) {
             const deliveryElement = document.getElementById('delivery');
-            if (deliveryElement) {
-               
+            if (deliveryElement==true) {
+                console.log
             }
         } else {
              deliveryElement.remove();
+        }
+
+        if (data.pick_up_with_establishment == true) {
+            const establishmentElement = document.getElementById('establishment');
+            if (establishmentElement==true) {
+                console.log
+            }
+        } else {
+             establishmentElement.remove();
         }
 
     } catch (erro) {
         console.log("Erro na requisição:", erro);
     }
 }
+
+
+// Você está comparando deliveryElement == true, mas getElementById nunca retorna true ou false, ele retorna um elemento ou null. Esse if nunca vai ser verdade.
+
+// Tem console.log sozinho sem nada — isso não faz nada e ainda vai dar erro.
+
+// O else está tentando usar deliveryElement e establishmentElementElement fora do escopo em que foram declarados. Se a variável só existe dentro do if, o else não tem como usar.
+
+// Você acabou duplicando o nome establishmentElementElement (provavelmente um erro de digitação).
 
 
 //pensar na logica que vou usar 
