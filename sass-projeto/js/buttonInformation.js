@@ -1,5 +1,6 @@
 import { price } from "./services.js";
 import { showLoading, hideLoading } from "./loading.js";
+import { metodoSend } from "./metodoSend.js";
 export function buttonInformations() {
   const buttons = document.querySelectorAll(".button-comprar");
   const modal = document.getElementById("meuModal");
@@ -45,16 +46,18 @@ export function buttonInformations() {
         </div>
 
             <div class="select-lista">
-              <select id="payment_method">
+              <select id="send_method">
                 <option value="">Escolha o método de envio</option>
-                <option value="delivery">Entrega do pedido</option>
-                <option value="establishment">Retirada do pedido</option>
+                <option id="delivery" value="delivery">Entrega do pedido</option>
+                <option id="establishment" value="establishment">Retirada do pedido</option>
               </select>
             </div>
           </div>
 
           <button id="confirmar-pedido" class="button-finalizar">Confirmar Pedido</button>
 `;
+
+        metodoSend(id);
 
       modal.style.display = "flex";
       document.body.style.overflow = "hidden";

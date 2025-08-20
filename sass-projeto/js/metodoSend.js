@@ -1,42 +1,32 @@
 
 import { URL_BASE_API } from "./domain.js";
+export async function metodoSend(id) {
 
-export async function metodoSend() {
     try {
-       
-        const response = await fetch(`${URL_BASE_API}/restaurant/product/`);
-        
+        const response = await fetch(`${URL_BASE_API}/restaurant/product/${id}`, {
+          method: 'GET',
+          headers: {
+            'ngrok-skip-browser-warning': true,
+            'Content-Type': 'application/json'
+          }
+        });
         const data = await response.json();
         console.log(data);
 
-        if (data.pick_up_with_delivery == true) {
-            const deliveryElement = document.getElementById('delivery');
-            if (data.pick_up_with_establishment == true) {
-                console.log
-            }
-         else {
-             deliveryElement.remove();
-        }
-     } else {
-             establishmentElement.remove();
+        const select = document.getElementById('send_method'); 
+
+        const deliveryOption = select.querySelector('option[value="delivery"]');
+        const establishmentOption = select.querySelector('option[value="establishment"]');
+
+        if (!data.pick_up_with_delivery && deliveryOption) {
+          
+        }  select.removeChild(deliveryOption);
+
+        if (!data.pick_up_with_establishment && establishmentOption) {
+            select.removeChild(establishmentOption);
         }
 
     } catch (erro) {
         console.log("Erro na requisição:", erro);
     }
 }
-
-
-// Você está comparando deliveryElement == true, mas getElementById nunca retorna true ou false, ele retorna um elemento ou null. Esse if nunca vai ser verdade.
-
-// Tem console.log sozinho sem nada — isso não faz nada e ainda vai dar erro.
-
-// O else está tentando usar deliveryElement e establishmentElementElement fora do escopo em que foram declarados. Se a variável só existe dentro do if, o else não tem como usar.
-
-// Você acabou duplicando o nome establishmentElementElement (provavelmente um erro de digitação).
-
-
-//pensar na logica que vou usar 
-// verificar com data qual metodo esta true e qual esta false 
-// if true vai conseguir ver a opçao 
-// else nao vai aparecer a opçao
