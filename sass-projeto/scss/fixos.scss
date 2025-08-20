@@ -10,10 +10,12 @@ header {
   z-index: 2;
   display: flex; 
   justify-content: center;
-  background-color: #f5f5f5;
+  background-color: #F5EBDC;
   padding: 15px 45px 15px 45px;
   border-radius: 50px;
   width: auto;
+  left: 50%;
+  transform: translateX(-50%);
 }
 
 a{
@@ -37,10 +39,11 @@ header nav ul {
 //   z-index: 1;
 //    transition: background-color 0.3s ease, transform 0.2s ease;
 // }
-// li:hover {
-//       background-color: wheat; 
-//       transform: scale(1.05);
-//     }
+
+li:hover {
+    text-decoration: underline;
+    // transform: scale(1.05);
+}
 
 
 

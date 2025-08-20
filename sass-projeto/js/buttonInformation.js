@@ -38,7 +38,8 @@ export function buttonInformations() {
           <h3>${price(data.price)}</h3>
 
           <div class="forma_de_pagamento">
-            <h2>Forma de pagamento</h2>
+
+          <h2>Forma de pagamento</h2>
             
           <div class="cartao">
           <input id="credit_card_name" placeholder="Nome no cartão" type="text">

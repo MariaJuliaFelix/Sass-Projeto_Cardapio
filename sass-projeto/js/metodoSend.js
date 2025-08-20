@@ -19,8 +19,8 @@ export async function metodoSend(id) {
         const establishmentOption = select.querySelector('option[value="establishment"]');
 
         if (!data.pick_up_with_delivery && deliveryOption) {
-          
-        }  select.removeChild(deliveryOption);
+           select.removeChild(deliveryOption);
+        } 
 
         if (!data.pick_up_with_establishment && establishmentOption) {
             select.removeChild(establishmentOption);
