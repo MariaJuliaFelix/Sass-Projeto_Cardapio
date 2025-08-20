@@ -7,7 +7,9 @@ export function buttonInformations() {
   const span = modal.querySelector(".fechar");   
   const modalBody = modal.querySelector("#modal-body"); 
 
-  
+
+  modal.style.display = "none";
+
   buttons.forEach(button => {
     button.addEventListener("click", async function () {
       const id = this.dataset.id;
