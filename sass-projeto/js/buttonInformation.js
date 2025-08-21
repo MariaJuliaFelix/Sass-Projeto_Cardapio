@@ -6,13 +6,15 @@ export function buttonInformations() {
   const modal = document.getElementById("meuModal");
   const span = modal.querySelector(".fechar");   
   const modalBody = modal.querySelector("#modal-body"); 
-
+  const header = document.querySelector("header");
 
   modal.style.display = "none";
+ 
 
   buttons.forEach(button => {
     button.addEventListener("click", async function () {
       const id = this.dataset.id;
+      header.classList.add("hide");
       console.log("Clicou no botão com id:", id);
       showLoading();
       try {
@@ -61,9 +63,10 @@ export function buttonInformations() {
 `;
 
         metodoSend(id);
-
+    
       modal.style.display = "flex";
       document.body.style.overflow = "hidden";
+        
 
       } catch (erro) {
         console.error("Erro no fetch:", erro);
@@ -72,6 +75,8 @@ export function buttonInformations() {
     }
     });
   });
+
+header.classList.remove("hide");
 
  span.onclick = () => {
   modal.style.display = "none";

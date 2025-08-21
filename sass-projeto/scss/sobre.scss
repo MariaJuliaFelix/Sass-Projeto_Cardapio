@@ -1,42 +1,85 @@
 @use 'mixins';
 .sobre {
   padding-top: 4rem;
-  padding-bottom: 4rem;
   display: flex;
   justify-content: center;    
   align-items: center;        
   gap: 15rem;                   
   height: 70vh;              
-  background-color: #F5EBDC;
+  background-color: #FBF8EF;
   padding: 0 2rem;             
 }
 
 .conteudo {
-  width: 40%;
+  width: 35%;
   text-align: left;
   padding-bottom: 1rem;
+  padding-left: 1rem;
 }
 
 .conteudo h3 {
   @include mixins.titulo;
-  padding-bottom: 2rem
+  padding-bottom: 1rem;
+  color: #521C0D;
 }
 
 .conteudo p{
     font-size: 1.2rem;
     padding-top: 3px;
+    color: #521C0D;
 }
 
-.imagem-sobre img {
-  width: 500px;              
-  height: 500px;
-  object-fit: cover;
-  border-radius: 50%;
-  box-shadow: rgba(56, 56, 56, 0.753) 1px 0px 10px 1px;
-}
+// .imagem-sobre img {
+//   width: auto;         
+//   bottom: 0;     
+//   height: 700px;
+// }
 
 .conteudo .texto-destaque{
-    color: rgb(255, 102, 0);
+    color: #521C0D;
     font-size: 1.4rem;
     font-weight: 600;
 }
+
+.call{
+  margin-bottom: 3rem;
+}
+.card {
+  flex: 1;
+  border: 1px solid #e0e0e0;
+  border-radius: 10px;
+  padding: 30px;
+  text-align: center;
+  transition: box-shadow 0.3s;
+}
+
+.card:hover {
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+.icon {
+  font-size: 32px;
+  margin-bottom: 10px;
+}
+
+.text {
+  margin: 10px 0;
+  font-size: 16px;
+}
+
+.link {
+  text-decoration: none;
+  font-weight: bold;
+  margin-top: 10px;
+}
+
+.call .icon,
+.call .link {
+  color: #521C0D; 
+}
+
+.chat .icon,
+.chat .link {
+  color: #521C0D; 
+}
+

@@ -9,6 +9,32 @@ setInterval(() => {
 }, 5000); 
 
 
+let lastScroll = 0;
+const header = document.querySelector("header");
+
+window.addEventListener("scroll", () => {
+  const currentScroll = window.pageYOffset;
+
+  if (currentScroll > lastScroll) {
+    header.classList.add("hide");
+  } else {
+    header.classList.remove("hide");
+  }
+
+  lastScroll = currentScroll;
+});
+
+
+
+let trilho = document.getElementById('trilho')
+let body = document.querySelector('body')
+
+trilho.addEventListener('click', ()=>{
+    trilho.classList.toggle('dark')
+    body.classList.toggle('dark')
+} )
+
+
 import { renderMenu } from "./renderMenu.js";
 import { buttonInformations } from "./buttonInformation.js";
 import { URL_BASE_API } from "./domain.js";

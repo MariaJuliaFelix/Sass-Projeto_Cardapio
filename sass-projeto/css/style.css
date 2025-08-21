@@ -1,19 +1,36 @@
 @charset "UTF-8";
 header {
-  font-family: "Poppins", sans-serif;
-  color: #363636;
-  position: absolute;
-  top: 20px;
-  left: 0;
-  z-index: 2;
   display: flex;
   justify-content: center;
-  background-color: #F5EBDC;
-  padding: 15px 45px 15px 45px;
-  border-radius: 50px;
-  width: auto;
+  align-items: center;
+  font-family: "Poppins", sans-serif;
+  color: #363636;
+  position: fixed;
+  top: 15px;
   left: 50%;
   transform: translateX(-50%);
+  z-index: 100;
+  background-color: #F5EBDC;
+  padding: 10px 45px;
+  border-radius: 50px;
+  width: auto;
+  box-shadow: rgba(56, 56, 56, 0.753) 1px 0px 10px 1px;
+  transition: transform 0.3s ease-in-out, border-radius 0.2s ease-in-out;
+}
+
+header.hide {
+  transform: translate(-50%, -200%);
+}
+
+.logo img {
+  width: auto;
+  height: 40px;
+  margin: 0%;
+}
+
+nav {
+  padding-left: 100px;
+  padding-right: 130px;
 }
 
 a {
@@ -37,7 +54,7 @@ footer {
   align-items: center;
   padding: 30px;
   box-shadow: rgba(20, 20, 20, 0.26) 1px 0px 10px 1px;
-  background-color: #fff;
+  background-color: #F5EBDC;
   border-top: 1px solid #e5e7eb;
   padding: 40px 20px;
   text-align: center;
@@ -59,7 +76,7 @@ footer .footer-menu a {
   transition: color 0.3s;
 }
 footer .footer-menu a:hover {
-  color: #ffa600;
+  color: #FE7743;
 }
 footer .footer-apps {
   display: flex;
@@ -85,7 +102,7 @@ footer .footer-socials a {
   transition: background-color 0.3s;
 }
 footer .footer-socials a:hover {
-  background-color: #ffa600;
+  background-color: #FE7743;
 }
 footer .footer-socials img {
   height: 25px;
@@ -109,45 +126,82 @@ footer .footer-credit {
 
 .sobre {
   padding-top: 4rem;
-  padding-bottom: 4rem;
   display: flex;
   justify-content: center;
   align-items: center;
   gap: 15rem;
   height: 70vh;
-  background-color: #F5EBDC;
+  background-color: #FBF8EF;
   padding: 0 2rem;
 }
 
 .conteudo {
-  width: 40%;
+  width: 35%;
   text-align: left;
   padding-bottom: 1rem;
+  padding-left: 1rem;
 }
 
 .conteudo h3 {
   font-size: 3rem;
   color: #FF6202;
-  padding-bottom: 2rem;
+  padding-bottom: 1rem;
+  color: #521C0D;
 }
 
 .conteudo p {
   font-size: 1.2rem;
   padding-top: 3px;
-}
-
-.imagem-sobre img {
-  width: 500px;
-  height: 500px;
-  object-fit: cover;
-  border-radius: 50%;
-  box-shadow: rgba(56, 56, 56, 0.753) 1px 0px 10px 1px;
+  color: #521C0D;
 }
 
 .conteudo .texto-destaque {
-  color: rgb(255, 102, 0);
+  color: #521C0D;
   font-size: 1.4rem;
   font-weight: 600;
+}
+
+.call {
+  margin-bottom: 3rem;
+}
+
+.card {
+  flex: 1;
+  border: 1px solid #e0e0e0;
+  border-radius: 10px;
+  padding: 30px;
+  text-align: center;
+  transition: box-shadow 0.3s;
+}
+
+.card:hover {
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.icon {
+  font-size: 32px;
+  margin-bottom: 10px;
+}
+
+.text {
+  margin: 10px 0;
+  font-size: 16px;
+}
+
+.link {
+  text-decoration: none;
+  font-weight: bold;
+  margin-top: 10px;
+}
+
+.call .icon,
+.call .link {
+  color: #521C0D;
+}
+
+.chat .icon,
+.chat .link {
+  color: #521C0D;
 }
 
 .insta-img {
@@ -155,7 +209,7 @@ footer .footer-credit {
   padding-top: 4rem;
   padding-bottom: 4rem;
   gap: 10px;
-  background-color: #F5EBDC;
+  background-color: #FE7743;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -292,6 +346,14 @@ footer .footer-credit {
     display: none;
   }
 }
+.titulo-cardapio {
+  padding-left: 25rem;
+  padding-top: 9rem;
+  padding-bottom: 1rem;
+  font-size: 3rem;
+  color: #521C0D;
+}
+
 .container-menu {
   display: flex;
   justify-content: center;
@@ -299,13 +361,13 @@ footer .footer-credit {
   flex-wrap: wrap;
   gap: 50px;
   height: 80vh;
-  padding-top: 7rem;
-  padding-bottom: 7rem;
+  padding-top: 1rem;
+  padding-bottom: 5rem;
   z-index: 1;
   position: relative;
   padding-left: 15rem;
   padding-right: 15rem;
-  background-color: #F5EBDC;
+  background-color: #FBF8EF;
 }
 
 .card-menu {
@@ -345,11 +407,11 @@ footer .footer-credit {
 }
 
 .button-comprar {
-  background-color: rgb(255, 229, 196);
+  background-color: #FE7743;
   padding: 8px 45px 8px 45px;
   text-align: center;
   justify-content: center;
-  border: solid rgba(0, 0, 0, 0.356) 1px;
+  border: solid rgba(0, 0, 0, 0.253) 1px;
   border-radius: 12px;
   font-size: 16px;
   margin-top: 1rem;
@@ -588,13 +650,42 @@ footer .footer-credit {
   cursor: pointer;
 }
 
+.trilho {
+  width: 60px;
+  height: 30px;
+  background-color: #c3c3c3;
+  border-radius: 150px;
+  position: relative;
+  cursor: pointer;
+}
+
+.trilho .indicador {
+  width: 30px;
+  height: 30px;
+  background-color: #fff;
+  border-radius: 50%;
+  transform: scale(0.9);
+  position: absolute;
+  left: 0;
+  transition: 0.5s;
+}
+
+.trilho.dark {
+  background-color: #4d4d4d;
+}
+
+.trilho.dark .indicador {
+  left: 30px;
+  background-color: black;
+}
+
 * {
   margin: 0%;
   padding: 0%;
 }
 
 body {
-  background-color: antiquewhite;
+  background-color: #FBF8EF;
   font-family: "Poppins", sans-serif;
 }
 

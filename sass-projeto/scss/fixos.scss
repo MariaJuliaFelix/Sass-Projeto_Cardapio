@@ -2,21 +2,47 @@
 @use 'mixins';
 
 header {
+  @include mixins.centralizar;
   font-family: variaveis.$fonte-principal;
   color: variaveis.$cor-titulo;
-  position: absolute;
-  top: 20px; 
-  left: 0;
-  z-index: 2;
-  display: flex; 
-  justify-content: center;
-  background-color: #F5EBDC;
-  padding: 15px 45px 15px 45px;
-  border-radius: 50px;
-  width: auto;
+  position: fixed;
+  top: 15px; 
   left: 50%;
   transform: translateX(-50%);
+  z-index: 100;
+  background-color: #F5EBDC;
+  padding: 10px 45px;
+  border-radius: 50px;
+  width: auto;
+  box-shadow: rgba(56, 56, 56, 0.753) 1px 0px 10px 1px;
+  transition: transform 0.3s ease-in-out, border-radius 0.2s ease-in-out;
 }
+
+header.hide {
+  transform: translate(-50%, -200%);
+}
+
+
+.logo img{
+  width: auto;
+  height: 40px;
+  margin: 0%;
+}
+
+nav{
+  padding-left: 100px;
+  padding-right: 130px;
+}
+
+// header.sticky {
+//   top: 0; 
+//   border-top-left-radius: 0;
+//   border-top-right-radius: 0;
+//   border-bottom-left-radius: 20px;
+//   border-bottom-right-radius: 20px;
+// }
+
+
 
 a{
   text-decoration: none;
@@ -52,11 +78,11 @@ footer{
     @include mixins.centralizar;
     padding: 30px;
     box-shadow: rgba(20, 20, 20, 0.26) 1px 0px 10px 1px;
-    background-color: #fff;
+    background-color: #F5EBDC;
     border-top: 1px solid #e5e7eb;
     padding: 40px 20px;
     text-align: center;
-  
+
   .footer-content {
     max-width: 1000px;
     margin: 0 auto;
@@ -78,7 +104,7 @@ footer{
   }
   
   .footer-menu a:hover {
-    color: #ffa600;
+    color: #FE7743;
   }
   
   .footer-apps {
@@ -110,7 +136,7 @@ footer{
   }
   
   .footer-socials a:hover {
-    background-color: #ffa600;
+    background-color: #FE7743;
   }
   
   .footer-socials img {

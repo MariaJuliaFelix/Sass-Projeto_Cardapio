@@ -14,6 +14,9 @@
 </head>
 <body>
     <header>
+      <div class="logo">
+        <img src="/sass-projeto/img/Sem título.png">
+      </div>
         <nav>
             <ul>
                 <li><a href="#banner-img">Inicio</a></li>
@@ -22,12 +25,15 @@
                 <li><a href="#insta">Redes Sociais</a></li>
             </ul>
         </nav>
-       
+        <div class="trilho" id="trilho">
+            <div class="indicador"></div>
+        </div>
     </header>
     <main>
         <div class="banner">
             <img  id="banner-img" src="img/banner/banner1.png">
         </div>
+        <h1 class="titulo-cardapio">Nosso cardápio</h1>
        <div id="container_menu" class="container-menu"></div>
        <div id="preloader">
         <div id="loader"></div>
@@ -42,19 +48,31 @@
    </div>
         <div class="sobre" id="sobre">
             <div class="conteudo"  data-aos="fade-right">
-            <h3>Sobre nós</h3>
-            <p class="texto-destaque">No nosso restaurante, cada prato conta uma história.</p>
-            <p>Somos apaixonados por sabores autênticos, ingredientes frescos e uma boa refeição compartilhada. Mais do que um lugar para comer, queremos ser um espaço onde você se sinta em casa, saboreando cada momento com quem ama.</p>
-            <p>Nosso cardápio foi pensado com carinho para agradar todos os paladares desde os clássicos que aquecem o coração até as novidades que surpreendem.
-            Tudo é feito com atenção aos detalhes, do atendimento à apresentação dos pratos.</p>
+            <h3>Sabor que conquista, frescor que encanta!</h3>
+            <p>Nosso cardápio foi pensado com carinho para agradar todos os paladares desde os clássicos que aquecem o coração até as novidades que surpreendem.<br>Aqui, cada mordida é uma experiência.</p>
             <br>
             <p class="texto-destaque">Seja bem-vindo(a) e aproveite sua experiência conosco!</p>
             </div>
-            <div class="imagem-sobre"  data-aos="fade-left">
-                <img src="img/sobre/sobre-image.png">
+            <!-- <div class="imagem-sobre"  data-aos="fade-left">
+                <img class="celular" src="img/Preto e Roxo Moderno Aumente Suas Vendas Marketing Post para Instagram (1).png">
+            </div> -->
+          
+            <div class="contact-cards" data-aos="fade-left">
+              <div class="card call">
+                <div class="icon">📞</div>
+                <p class="text">Tem alguma duvida?</p>
+                <a href="" class="link">Ligue para nós →</a>
+              </div>
+
+              <div class="card chat">
+                <div class="icon">💬</div>
+                <p class="text">Ficou alguma duvida?</p>
+                <a href="" class="link">Nos envie uma mensagem →</a>
+              </div>
             </div>
+
         </div>
-     <div id="insta" class="insta-img" data-aos="fade-up"
+     <div id="insta" class="insta-img"
      data-aos-anchor-placement="top-bottom" id="insta">
       <div class="image-wrapper">
         <img src="img/insta/img1.png" alt="Imagem 1">
