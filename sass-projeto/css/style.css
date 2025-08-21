@@ -407,19 +407,19 @@ footer .footer-credit {
 }
 
 .button-comprar {
-  background-color: #FE7743;
-  padding: 8px 45px 8px 45px;
+  background-color: rgba(254, 120, 67, 0.7137254902);
+  padding: 8px 58px 8px 58px;
   text-align: center;
   justify-content: center;
-  border: solid rgba(0, 0, 0, 0.253) 1px;
+  border: solid rgba(0, 0, 0, 0.418) 1px;
   border-radius: 12px;
-  font-size: 16px;
+  font-size: 15px;
   margin-top: 1rem;
   margin-bottom: 1rem;
 }
 
 .button-comprar:hover {
-  background-color: rgb(255, 200, 120);
+  background-color: #FE7743;
   transform: scale(1.01);
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.115);
   transition: all 0.3s ease;
