@@ -34,7 +34,8 @@ trilho.addEventListener('click', ()=>{
     body.classList.toggle('dark')
 } )
 
-
+const modal = document.getElementById("meuModal");
+modal.style.display = "none";
 import { renderMenu } from "./renderMenu.js";
 import { buttonInformations } from "./buttonInformation.js";
 import { URL_BASE_API } from "./domain.js";

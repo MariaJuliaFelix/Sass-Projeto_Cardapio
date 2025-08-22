@@ -3,8 +3,6 @@ header {
   display: flex;
   justify-content: center;
   align-items: center;
-  font-family: "Poppins", sans-serif;
-  color: #363636;
   position: fixed;
   top: 15px;
   left: 50%;

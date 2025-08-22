@@ -1,4 +1,3 @@
-@use 'variaveis';
 @use 'mixins';
 @use 'fixos';
 @use 'banner';
@@ -18,5 +17,5 @@
 
 body{
     background-color: #FBF8EF;
-    font-family: variaveis.$fonte-principal;
+    font-family:  'Poppins', sans-serif;
 }

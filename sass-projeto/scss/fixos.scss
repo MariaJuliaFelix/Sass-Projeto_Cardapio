@@ -1,10 +1,7 @@
-@use 'variaveis';
 @use 'mixins';
 
 header {
   @include mixins.centralizar;
-  font-family: variaveis.$fonte-principal;
-  color: variaveis.$cor-titulo;
   position: fixed;
   top: 15px; 
   left: 50%;
@@ -34,16 +31,6 @@ nav{
   padding-right: 130px;
 }
 
-// header.sticky {
-//   top: 0; 
-//   border-top-left-radius: 0;
-//   border-top-right-radius: 0;
-//   border-bottom-left-radius: 20px;
-//   border-bottom-right-radius: 20px;
-// }
-
-
-
 a{
   text-decoration: none;
   color: #333;
@@ -57,21 +44,9 @@ header nav ul {
   gap: 35px;
 }
 
-// li {
-//   background-color: orange;
-//   box-shadow: rgba(56, 56, 56, 0.753) 1px 0px 10px 1px;
-//   padding: 7px 35px;
-//   border-radius: 30px;  
-//   z-index: 1;
-//    transition: background-color 0.3s ease, transform 0.2s ease;
-// }
-
 li:hover {
     text-decoration: underline;
-    // transform: scale(1.05);
 }
-
-
 
 
 footer{
