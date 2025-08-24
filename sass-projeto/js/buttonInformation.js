@@ -1,6 +1,8 @@
 import { price } from "./services.js";
 import { showLoading, hideLoading } from "./loading.js";
 import { metodoSend } from "./metodoSend.js";
+import { URL_BASE_API } from "./domain.js";
+import { formPay } from "./pay.js";
 export function buttonInformations() {
   const buttons = document.querySelectorAll(".button-comprar");
   const modal = document.getElementById("meuModal");
@@ -18,7 +20,7 @@ export function buttonInformations() {
       console.log("Clicou no botão com id:", id);
       showLoading();
       try {
-        const response = await fetch(`https://d41d75f43ca7.ngrok-free.app/restaurant/product/${id}`, {
+        const response = await fetch(`${URL_BASE_API}/restaurant/product/${id}`, {
           method: 'GET',
           headers: {
             'ngrok-skip-browser-warning': true,
@@ -39,11 +41,11 @@ export function buttonInformations() {
           <img class="img-information" src="${data.url_banner}" alt="${data.description}">
           <h3>${price(data.price)}</h3>
 
-          <div class="forma_de_pagamento">
+          <div class="forma_de_pagamento" id="form-pay">
 
           <h2>Forma de pagamento</h2>
             
-          <div class="cartao">
+          <div class="cartao" >
           <input id="credit_card_name" placeholder="Nome no cartão" type="text">
           <input id="credit_card_number" placeholder="Número do cartão" type="text">
           <input id="credit_card_date_expiration" placeholder="Validade (MM/AA)" type="text">
@@ -57,12 +59,14 @@ export function buttonInformations() {
                 <option id="establishment" value="establishment">Retirada do pedido</option>
               </select>
             </div>
-          </div>
+          
 
-          <button id="confirmar-pedido" class="button-finalizar">Confirmar Pedido</button>
+          <button type="submit" id="confirmar-pedido" class="button-finalizar">Confirmar Pedido</button>
+          </div>
 `;
 
         metodoSend(id);
+        formPay();
     
       modal.style.display = "flex";
       document.body.style.overflow = "hidden";
