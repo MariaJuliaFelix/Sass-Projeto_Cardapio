@@ -648,6 +648,23 @@ footer .footer-credit {
   cursor: pointer;
 }
 
+.form-group {
+  margin-bottom: 15px;
+  position: relative;
+}
+
+input.error, select.error {
+  border-color: 0;
+  background-color: #ccc;
+}
+
+small {
+  font-size: 14px;
+  margin-top: 5px;
+  display: block;
+  color: 0;
+}
+
 .trilho {
   width: 60px;
   height: 30px;

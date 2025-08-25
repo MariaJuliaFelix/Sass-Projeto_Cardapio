@@ -41,14 +41,14 @@ export function buttonInformations() {
           <img class="img-information" src="${data.url_banner}" alt="${data.description}">
           <h3>${price(data.price)}</h3>
 
-          <div class="forma_de_pagamento" id="form-pay">
+          <form class="forma_de_pagamento" id="form-pay">
 
           <h2>Forma de pagamento</h2>
             
           <div class="cartao" >
           <input id="credit_card_name" placeholder="Nome no cartão" type="text">
           <input id="credit_card_number" placeholder="Número do cartão" type="text">
-          <input id="credit_card_date_expiration" placeholder="Validade (MM/AA)" type="text">
+          <input id="credit_card_date" placeholder="Validade (MM/AA)" type="text">
           <input id="credit_card_code" placeholder="CVV" type="password">
         </div>
 
@@ -62,11 +62,11 @@ export function buttonInformations() {
           
 
           <button type="submit" id="confirmar-pedido" class="button-finalizar">Confirmar Pedido</button>
-          </div>
+          </form>
 `;
 
         metodoSend(id);
-        formPay();
+        formPay(id);
     
       modal.style.display = "flex";
       document.body.style.overflow = "hidden";

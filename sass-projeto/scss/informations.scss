@@ -110,3 +110,22 @@
     transition: all 0.3s ease; 
     cursor: pointer; 
 }
+
+
+
+.form-group{
+  margin-bottom: 15px;
+  position: relative;
+}
+
+input.error, select.error{
+  border-color: red($color: #000000);
+  background-color: #ccc;
+}
+
+small{
+  font-size: 14px;
+  margin-top: 5px;
+  display: block;
+  color: red($color: #000000);
+}
