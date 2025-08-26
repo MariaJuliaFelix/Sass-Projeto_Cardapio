@@ -2,7 +2,7 @@ import { price } from "./services.js";
 import { showLoading, hideLoading } from "./loading.js";
 import { metodoSend } from "./metodoSend.js";
 import { URL_BASE_API } from "./domain.js";
-import { formPay } from "./pay.js";
+import { pay } from "./pay.js";
 export function buttonInformations() {
   const buttons = document.querySelectorAll(".button-comprar");
   const modal = document.getElementById("meuModal");
@@ -66,7 +66,12 @@ export function buttonInformations() {
 `;
 
         metodoSend(id);
-        formPay(id);
+        const formPay = document.getElementById("form-pay");
+
+        formPay.addEventListener("submit", (e) => {
+          e.preventDefault(); 
+          pay(id); 
+        });
     
       modal.style.display = "flex";
       document.body.style.overflow = "hidden";

@@ -1,202 +1,93 @@
-// import { URL_BASE_API } from "./domain.js";
-
-// export async function pay() {
-//     const cardNameInput = document.getElementById("credit_card_name");
-//     const cardNumberInput = document.getElementById("credit_card_number");
-//     const cardDateInput = document.getElementById("credit_card_date");
-//     const cardCodeInput = document.getElementById("credit_card_code");
-
-//     const cardName = cardNameInput.value.trim();
-//     const cardNumber = cardNumberInput.value.trim();
-//     const cardDate = cardDateInput.value;
-//     const cardCode = cardCodeInput.value;
-    
-// const showErro = (field, errorText) => {
-//   field.classList.add("erro");
-//   const errorElement = document.createElement("small");
-//   errorElement.classList.add("error-text");
-//   errorElement.innerText = errorText;
-//   field.closest(".form-group").appendChild(errorElement);
-// }
-
-//     if (cardName === "") {
-//       showErro(cardNameInput, "Preencha com seu nome");
-//     }
-//     if (cardNumber === "") {
-//       showErro(cardNumberInput, "Preencha com o número do cartão");
-//     }
-//     if (cardDate === "") {
-//       showErro(cardDateInput, "Preencha com a data");
-//     }
-//     if (cardCode === "") {
-//       showErro(cardCodeInput, "Preencha com o codigo");
-//     }
-  
-
-//     const body = {
-//       "credit_card_name": cardName,
-//       "credit_card_number": cardNumber,
-//       "credit_card_date": cardDate,
-//       "credit_card_code": cardCode
-//     }
-
-//    try {
-//         const response = await fetch(`${URL_BASE_API}/restaurant/product/pay/`, {
-//           method: 'POST',
-//           headers: {
-//             'ngrok-skip-browser-warning': true,
-//             'Content-Type': 'application/json'
-//           },
-//           body: JSON.stringify(body)
-//         });
-//         const data = await response.json();
-//         console.log(data);
-//     } catch (error) {
-//         console.error("Erro ao processar pagamento:", error);
-//     }
-
-//     console.log(body);
-// }
-
-
 import { URL_BASE_API } from "./domain.js";
 
-export function formPay(id) {
-  const formPay = document.getElementById("form-pay");
+const showErro = (field, errorText) => {
+  field.classList.add("erro");
+  const errorElement = document.createElement("small");
+  errorElement.classList.add("error-text");
+  errorElement.innerText = errorText;
+  field.closest(".cartao").appendChild(errorElement);
+};
 
-  const showErro = (field, errorText) => {
-    field.classList.add("error");
-    const errorElement = document.createElement("small");
-    errorElement.classList.add("error-text");
-    errorElement.innerText = errorText;
-    field.closest(".form-group").appendChild(errorElement);
+const clearErrors = () => {
+  document.querySelectorAll(".error-text").forEach((el) => el.remove());
+  document.querySelectorAll(".erro").forEach((el) =>
+    el.classList.remove("erro")
+  );
+};
+
+export async function pay(id) {
+  clearErrors();
+
+  const cardNameInput = document.getElementById("credit_card_name");
+  const cardNumberInput = document.getElementById("credit_card_number");
+  const cardDateInput = document.getElementById("credit_card_date");
+  const cardCodeInput = document.getElementById("credit_card_code");
+
+  const cardName = cardNameInput?.value.trim().toUpperCase();
+  const cardNumber = cardNumberInput?.value.replace(/\s+/g, "");
+  const cardDate = cardDateInput?.value.trim();
+  const cardCode = cardCodeInput?.value.trim();
+
+  let hasError = false;
+
+  if (!cardName) {
+    showErro(cardNameInput, "Preencha com seu nome");
+    hasError = true;
+  }
+
+  if (!/^\d{16}$/.test(cardNumber)) {
+    showErro(cardNumberInput, "Número do cartão inválido (precisa ter 16 dígitos)");
+    hasError = true;
+  }
+
+  const dateRegex = /^(\d{2})\/(\d{2})$/;
+  if (!dateRegex.test(cardDate)) {
+    showErro(cardDateInput, "Data inválida (use MM/AA)");
+    hasError = true;
+  } else {
+    const [_, mm, yy] = cardDate.match(dateRegex);
+    const month = parseInt(mm, 10);
+    const year = 2000 + parseInt(yy, 10);
+
+    const now = new Date();
+    const currentYear = now.getFullYear();
+    const currentMonth = now.getMonth() + 1;
+
+    if (month < 1 || month > 12) {
+      showErro(cardDateInput, "Mês inválido");
+      hasError = true;
+    } else if (year < currentYear || (year === currentYear && month < currentMonth)) {
+      showErro(cardDateInput, "Cartão vencido");
+      hasError = true;
+    }
+  }
+
+  if (!/^\d{3,4}$/.test(cardCode)) {
+    showErro(cardCodeInput, "Código de segurança inválido");
+    hasError = true;
+  }
+
+  if (hasError) return;
+
+  const body = {
+    credit_card_name: cardName,
+    credit_card_number: cardNumber,
+    credit_card_date: cardDate,
+    credit_card_code: cardCode,
   };
 
-  const clearErrors = () => {
-    document.querySelectorAll(".error-text").forEach((el) => el.remove());
-    document.querySelectorAll(".erro").forEach((el) =>
-      el.classList.remove("error")
+  try {
+    const response = await fetch(`${URL_BASE_API}/restaurant/product/pay/${id}`,
+      {
+        method: "POST",
+        headers: {
+          "ngrok-skip-browser-warning": true,
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(body),
+      }
     );
-  };
-
-  formPay.addEventListener("submit", async (evento) => {
-    evento.preventDefault();
-    clearErrors();
-
-    const cardNameInput = document.getElementById("credit_card_name");
-    const cardNumberInput = document.getElementById("credit_card_number");
-    const cardDateInput = document.getElementById("credit_card_date");
-    const cardCodeInput = document.getElementById("credit_card_code");
-
-    const cardName = cardNameInput.value.trim();
-    const cardNumber = cardNumberInput.value.trim();
-    const cardDate = cardDateInput.value;
-    const cardCode = cardCodeInput.value;
-
-    let hasError = false;
-
-    if (cardName === "") {
-      showErro(cardNameInput, "Preencha com seu nome");
-      hasError = true;
-    }
-    if (cardNumber === "") {
-      showErro(cardNumberInput, "Preencha com o número do cartão");
-      hasError = true;
-    }
-    if (cardDate === "") {
-      showErro(cardDateInput, "Preencha com a data");
-      hasError = true;
-    }
-    if (cardCode === "") {
-      showErro(cardCodeInput, "Preencha com o código");
-      hasError = true;
-    }
-
-    if (hasError) return;
-
-    const formData = new FormData(formPay);
-    const data = Object.fromEntries(formData);
-
-    try {
-      const response = await fetch(
-        `${URL_BASE_API}/restaurant/product/pay/${id}`,
-        {
-          method: "POST",
-          headers: {
-            "ngrok-skip-browser-warning": "true",
-            "Content-Type": "application/json",
-          },
-          body: JSON.stringify(data),
-        }
-      );
-
-      if (!response.ok) throw new Error("Erro na requisição");
-
-      const result = await response.json();
-      alert("Pagamento realizado com sucesso!");
-      console.log("Resposta da API:", result);
-    } catch (err) {
-      alert("Não foi possível processar o pagamento.");
-      console.error("Erro:", err);
-    }
-  });
+  } catch (error) {
+    console.error("Erro ao processar pagamento:", error);
+  }
 }
-
-
-
-
-
-
-
-
-// import { URL_BASE_API } from "./domain.js";
-
-// export function formPay(id){
-
-// const formPay = document.getElementById('form-pay')
-
-// formPay.addEventListener('submit', evento => {
-//   evento.preventDefault();
- 
-//   const formData = new FormData(formPay);
-//   const data = Object.fromEntries(formData);
-
-//       try {
-//         const response = await fetch(`${URL_BASE_API}/restaurant/product/pay/${id}`, {
-//           method: 'POST',
-//           headers: {
-//             'ngrok-skip-browser-warning': true,
-//             'Content-Type': 'application/json'
-//           }
-//         });
-
-//         body: JSON.stringify(data)
-//         .then(res => {
-//           if (!res.ok) throw new Error("Erro na requisição");
-//           return res.json();
-//         })
-//         .then(response => {
-//           alert("Pagamento realizado com sucesso!");
-//           console.log("Resposta da API:", response);
-//         })
-//         .catch(err => {
-//           alert("Não foi possível processar o pagamento.");
-//           console.error("Erro:", err);
-//         });
-// }
-
-
-
-
-
-
-
-// fetch(`${URL_BASE_API}/restaurant/product/pay/`, {
-//   method: 'POST',
-//   headers: {
-//     'ngrok-skip-browser-warning': true,
-//     'Content-Type': 'application/json'
-//   },
-//   body: JSON.stringify(data)
-// })
-
