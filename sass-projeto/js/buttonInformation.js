@@ -2,7 +2,7 @@ import { price } from "./services.js";
 import { showLoading, hideLoading } from "./loading.js";
 import { metodoSend } from "./metodoSend.js";
 import { URL_BASE_API } from "./domain.js";
-import { pay } from "./pay.js";
+import { confirmValuesCreditCard } from "./pay.js";
 export function buttonInformations() {
   const buttons = document.querySelectorAll(".button-comprar");
   const modal = document.getElementById("meuModal");
@@ -61,17 +61,21 @@ export function buttonInformations() {
             </div>
           
 
-          <button type="submit" id="confirmar-pedido" class="button-finalizar">Confirmar Pedido</button>
+          <button type="button" data-productid="${data.id}" id="confirmar-pedido" class="button-finalizar button-confirm">Confirmar Pedido</button>
+
           </form>
 `;
 
         metodoSend(id);
-        const formPay = document.getElementById("form-pay");
 
-        formPay.addEventListener("submit", (e) => {
-          e.preventDefault(); 
-          pay(id); 
-        });
+      const buttonConfirm = modalBody.querySelector(".button-confirm");
+
+      buttonConfirm.addEventListener("click", () => {
+        const productId = buttonConfirm.dataset.productid;
+        confirmValuesCreditCard(productId);
+      });
+
+
     
       modal.style.display = "flex";
       document.body.style.overflow = "hidden";
