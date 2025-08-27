@@ -14,11 +14,21 @@
 
 header{
     height: auto;
+    align-items: center;
+    justify-content: center;
 }
 
-li{
-   padding: 5px 5px 5px 7px;
+nav{
+  padding-left: 0px;
+  padding-right: 0px;
 }
+
+
+header nav ul{
+  gap: 5px;
+}
+
+
 
   .sobre {
     flex-direction: column;
@@ -87,10 +97,43 @@ li{
 }
 
 @media (max-width: 1024px) {
-.container-menu{
-  margin: 0;
-  padding: 0%;
-}
+
+
+  header{
+      height: auto;
+      align-items: center;
+      justify-content: center;
+  }
+
+  nav{
+    padding-left: 50px;
+    padding-right: 50px;
+    width: 400px;
+    gap: 20px;
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+  }
+
+  .titulo-cardapio{
+    justify-content: center;
+    padding: 0%;
+    margin: 0%;
+    text-align: center;
+    align-items: center;
+    
+  }
+
+  .container-menu{
+    margin: 0%;
+   display: flex;
+   flex-wrap: wrap;
+  }
+
+  .card-menu{
+    width: 250px;
+    height: 300px
+  }
 
   .sobre {
     flex-direction: column;
