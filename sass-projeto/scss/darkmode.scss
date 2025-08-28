@@ -1,4 +1,3 @@
-
 .trilho {
   width: 60px;
   height: 30px;
@@ -6,24 +5,24 @@
   border-radius: 150px;
   position: relative;
   cursor: pointer;
-}
 
-.trilho .indicador {
-  width: 30px;
-  height: 30px;
-  background-color: #fff;
-  border-radius: 50%;
-  transform: scale(0.9);
-  position: absolute;
-  left: 0;
-  transition: 0.5s;
-}
+  .indicador {
+    width: 30px;
+    height: 30px;
+    background-color: #fff;
+    border-radius: 50%;
+    transform: scale(0.9);
+    position: absolute;
+    left: 0;
+    transition: 0.5s;
+  }
 
-.trilho.dark {
-  background-color: #4d4d4d;
-}
+  &.dark {
+    background-color: #4d4d4d;
 
-.trilho.dark .indicador {
-  left: 30px;
-  background-color: black;
+    .indicador {
+      left: 30px;
+      background-color: black;
+    }
+  }
 }

@@ -700,7 +700,6 @@ form small {
   position: relative;
   cursor: pointer;
 }
-
 .trilho .indicador {
   width: 30px;
   height: 30px;
@@ -711,19 +710,17 @@ form small {
   left: 0;
   transition: 0.5s;
 }
-
 .trilho.dark {
   background-color: #4d4d4d;
 }
-
 .trilho.dark .indicador {
   left: 30px;
   background-color: black;
 }
 
 * {
-  margin: 0%;
-  padding: 0%;
+  margin: 0;
+  padding: 0;
 }
 
 body {
