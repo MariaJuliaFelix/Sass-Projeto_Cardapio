@@ -1,4 +1,8 @@
 @charset "UTF-8";
+.headerHam {
+  display: none;
+}
+
 header {
   display: flex;
   justify-content: center;
@@ -44,6 +48,15 @@ header nav ul {
 
 li:hover {
   text-decoration: underline;
+}
+
+.headerHam span {
+  display: block;
+  width: 25px;
+  height: 3px;
+  background: #333;
+  margin: 4px 0;
+  transition: all 0.3s ease;
 }
 
 footer {
@@ -249,6 +262,37 @@ footer .footer-credit {
 }
 
 @media (max-width: 768px) {
+  .headerHam {
+    display: flex;
+    flex-direction: column;
+    cursor: pointer;
+  }
+  header {
+    position: fixed;
+    background-color: transparent;
+    padding: 0;
+    width: auto;
+  }
+  nav ul {
+    position: absolute;
+    top: 70px;
+    right: 0;
+    background-color: #F5EBDC;
+    flex-direction: column;
+    width: 200px;
+    padding: 20px;
+    gap: 15px;
+    display: none;
+    box-shadow: rgba(56, 56, 56, 0.753) 1px 0px 10px 1px;
+    border-radius: 10px;
+  }
+  nav ul.active {
+    display: flex;
+  }
+  nav {
+    padding-left: 0;
+    padding-right: 0;
+  }
   .container-menu {
     margin: 0;
     padding: 0%;
@@ -258,18 +302,6 @@ footer .footer-credit {
   }
   .banner {
     height: auto;
-  }
-  header {
-    height: auto;
-    align-items: center;
-    justify-content: center;
-  }
-  nav {
-    padding-left: 0px;
-    padding-right: 0px;
-  }
-  header nav ul {
-    gap: 5px;
   }
   .sobre {
     flex-direction: column;

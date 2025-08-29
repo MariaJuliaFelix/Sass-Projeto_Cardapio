@@ -34,6 +34,10 @@ trilho.addEventListener('click', ()=>{
     body.classList.toggle('dark')
 } )
 
+import {headerHam} from "./headerHam.js";
+
+headerHam()
+
 const modal = document.getElementById("meuModal");
 modal.style.display = "none";
 import { renderMenu } from "./renderMenu.js";

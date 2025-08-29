@@ -1,4 +1,7 @@
 @use 'mixins';
+.headerHam {
+  display: none; 
+}
 
 header {
   @include mixins.centralizar;
@@ -19,7 +22,6 @@ header.hide {
   transform: translate(-50%, -200%);
 }
 
-
 .logo img{
   width: auto;
   height: 40px;
@@ -36,8 +38,6 @@ a{
   color: #333;
 }
 
-
-
 header nav ul {
   list-style: none;
   display: flex;
@@ -45,9 +45,17 @@ header nav ul {
 }
 
 li:hover {
-    text-decoration: underline;
+  text-decoration: underline;
 }
 
+.headerHam span {
+  display: block;
+  width: 25px;
+  height: 3px;
+  background: #333;
+  margin: 4px 0;
+  transition: all 0.3s ease;
+}
 
 footer{
     @include mixins.centralizar;

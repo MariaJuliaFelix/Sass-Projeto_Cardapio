@@ -1,5 +1,6 @@
 import { price } from "./services.js";
-import { confirm, monitorarEntrega } from "./confirm.js";
+// import { confirm} from "./confirm.js";
+import { monitorarEntrega } from "./loopMenu.js";
 
 export function renderMenu(items) {
   const containerMenu = document.querySelector("#container_menu");
@@ -22,4 +23,5 @@ export function renderMenu(items) {
   });
 
   items.forEach(item => monitorarEntrega(item.id));
+  
 }

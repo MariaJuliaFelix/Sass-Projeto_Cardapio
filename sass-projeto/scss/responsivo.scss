@@ -1,4 +1,43 @@
 @media (max-width: 768px) {
+
+  .headerHam {
+    display: flex;
+    flex-direction: column;
+    cursor: pointer;
+  }
+
+  //tenho que tirar a logo e o modnoturno ----- pensar sobre
+
+  header{
+      position: fixed;
+      background-color: transparent;
+      padding: 0;
+      width: auto;
+      }
+
+  nav ul {
+    position: absolute;
+    top: 70px; 
+    right: 0;
+    background-color: #F5EBDC;
+    flex-direction: column;
+    width: 200px;
+    padding: 20px;
+    gap: 15px;
+    display: none; 
+    box-shadow: rgba(56, 56, 56, 0.753) 1px 0px 10px 1px;
+    border-radius: 10px;
+  }
+
+  nav ul.active {
+    display: flex;
+  }
+
+  nav {
+    padding-left: 0;
+    padding-right: 0;
+  }
+
 .container-menu{
   margin: 0;
   padding: 0%;
@@ -11,23 +50,6 @@
         height: auto;
 
     }
-
-header{
-    height: auto;
-    align-items: center;
-    justify-content: center;
-}
-
-nav{
-  padding-left: 0px;
-  padding-right: 0px;
-}
-
-
-header nav ul{
-  gap: 5px;
-}
-
 
 
   .sobre {
