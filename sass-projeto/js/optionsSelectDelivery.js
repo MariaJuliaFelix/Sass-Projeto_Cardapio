@@ -1,7 +1,6 @@
 
 import { URL_BASE_API } from "./domain.js";
-export async function metodoSend(id) {
-
+export async function getOptionsDelivery(id) {
     try {
         const response = await fetch(`${URL_BASE_API}/restaurant/product/${id}`, {
           method: 'GET',

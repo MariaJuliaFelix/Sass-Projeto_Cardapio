@@ -262,6 +262,14 @@ footer .footer-credit {
 }
 
 @media (max-width: 768px) {
+  .titulo-cardapio {
+    padding-left: 0;
+    padding-top: 0;
+    padding-bottom: 1rem;
+    width: 100%;
+    font-size: 1.5rem;
+    color: #521C0D;
+  }
   .headerHam {
     display: flex;
     flex-direction: column;
@@ -357,6 +365,14 @@ footer .footer-credit {
   }
 }
 @media (max-width: 1024px) {
+  .titulo-cardapio {
+    padding-left: 0;
+    padding-top: 0;
+    padding-bottom: 1rem;
+    font-size: 1.5rem;
+    color: #521C0D;
+    width: 100%;
+  }
   header {
     height: auto;
     align-items: center;

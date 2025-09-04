@@ -1,10 +1,14 @@
-
 export function validarDelivery(item) {
   if (!item) return "Item inválido";
 
-  if (item.delivering) {
-    if (item.type_delivering === "delivery") return "Entrega disponível (delivery)";
-    if (item.type_delivering === "establishment") return "Entrega disponível (no estabelecimento)";
+  if (item.cooking) {
+    return "Preparando pedido...";
   }
-  return "Não é possível entrega";
+
+  if (item.delivering) {
+    if (item.type_delivering === "delivery") return "Saiu para entrega (delivery)";
+    if (item.type_delivering === "establishment") return "Pronto para retirada no estabelecimento";
+  }
+
+  return "Pedido recebido, aguardando confirmação";
 }

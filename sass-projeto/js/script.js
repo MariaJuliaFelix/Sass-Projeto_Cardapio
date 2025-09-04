@@ -34,33 +34,6 @@ trilho.addEventListener('click', ()=>{
     body.classList.toggle('dark')
 } )
 
-import {headerHam} from "./headerHam.js";
-
-headerHam()
 
 const modal = document.getElementById("meuModal");
 modal.style.display = "none";
-import { renderMenu } from "./renderMenu.js";
-import { buttonInformations } from "./buttonInformation.js";
-import { URL_BASE_API } from "./domain.js";
-
-async function getMenu() {
-    try {
-        const response = await fetch(`${URL_BASE_API}/restaurant/menu`, {
-            method: 'GET',
-            headers: {
-                'ngrok-skip-browser-warning': true,
-                'Content-Type': 'application/json'
-            }
-        });
-
-        const data = await response.json();
-        renderMenu(data);
-        buttonInformations(); 
-    } catch (erro) {
-        console.error(erro);
-    }
-}
-
-
-getMenu();
