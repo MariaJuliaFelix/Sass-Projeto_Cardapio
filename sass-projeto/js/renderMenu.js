@@ -1,6 +1,7 @@
 import { price, validarStatusDeliveryMenu, informationStatus } from "./services.js";
 
 export function renderMenu(items) {
+  console.log("Itens recebidos:", items);
   const containerMenu = document.querySelector("#container_menu");
   containerMenu.innerHTML = items.map(item => {
     const status = validarStatusDeliveryMenu(item);

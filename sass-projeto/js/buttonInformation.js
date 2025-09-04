@@ -4,7 +4,6 @@ import { getOptionsDelivery } from "./optionsSelectDelivery.js";
 import { URL_BASE_API } from "./domain.js";
 import { confirmValuesCreditCard } from "./pay.js";
 
-
 export function buttonInformations() {
   const buttons = document.querySelectorAll(".button-comprar");
   const modal = document.getElementById("meuModal");
@@ -64,7 +63,7 @@ export function buttonInformations() {
         `;
         
         getOptionsDelivery(id);
- // novo nome pra você não confundir
+
         const buttonConfirm = modalBody.querySelector(".button-confirm");
         buttonConfirm.addEventListener("click", () => {
           const productId = buttonConfirm.dataset.productid;
@@ -76,7 +75,6 @@ export function buttonInformations() {
           }
           if (!data.cooking && !data.delivering) {
             confirmValuesCreditCard(productId);
-            // pode fechar a modal depois do alert de compra também
           }
         });
         modal.style.display = "flex";

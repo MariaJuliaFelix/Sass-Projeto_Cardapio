@@ -1,49 +1,89 @@
+@use 'mixins';
 @media (max-width: 768px) {
 
+  header {
+  @include mixins.centralizar;
+  position: fixed;
+  top: 10px; 
+  left: 80px;
+  transform: translateX(-50%);
+  z-index: 100;
+  background-color: transparent;
+  padding: 0px;
+  box-shadow: none;
+}
 
-  .titulo-cardapio{
-    padding-left: 0;
-    padding-top: 0;
-    padding-bottom: 1rem;
-    width: 100%;
-    font-size: 1.5rem;
-    color: #521C0D;
-  }
+.trilho{
+  right: 0;
+  left: 140px;
+}
 
   .headerHam {
     display: flex;
     flex-direction: column;
     cursor: pointer;
+    z-index: 1001; 
+    
   }
 
-  header{
-      position: fixed;
-      background-color: transparent;
-      padding: 0;
-      width: auto;
-      }
+  .headerHam span {
+    display: block;
+    width: 25px;
+    height: 3px;
+    padding-right: 4px;
+    left: 0;
+    background: #333;
+    margin: 4px 0;
+    transition: all 0.3s ease;
+  }
 
-  nav ul {
+  .headerHam.open span:nth-child(1) {
+    transform: rotate(45deg) translate(5px, 10px);
+  }
+
+  .headerHam.open span:nth-child(2) {
+    opacity: 0;
+  }
+
+  .headerHam.open span:nth-child(3) {
+    transform: rotate(-45deg) translate(5px, -10px);
+  }
+
+  .nav-menu {
     position: absolute;
-    top: 70px; 
-    right: 0;
+    top: 50px;
+    left: 90px;
     background-color: #F5EBDC;
     flex-direction: column;
-    width: 200px;
-    padding: 20px;
-    gap: 15px;
+    width: 180px;
+    padding: 10px;
+    text-align: center;
+    gap: 8px;
     display: none; 
     box-shadow: rgba(56, 56, 56, 0.753) 1px 0px 10px 1px;
-    border-radius: 10px;
+    border-top-left-radius: 0%;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    border-top-right-radius: 10px;
+    z-index: 1000;
   }
 
-  nav ul.active {
+  .nav-menu.active {
     display: flex;
   }
 
-  nav {
+  .logo img{
+    display: none;
+  }
+
+
+  .titulo-cardapio{
     padding-left: 0;
-    padding-right: 0;
+    padding-right: 400px;
+    padding-top: 0;
+    padding-bottom: 1rem;
+    font-size: 1rem;
+    color: #521C0D;
   }
 
 .container-menu{
@@ -128,39 +168,72 @@
 
 @media (max-width: 1024px) {
 
-  .titulo-cardapio{
-    padding-left: 0;
-    padding-top: 0;
-    padding-bottom: 1rem;
-    font-size: 1.5rem;
-    color: #521C0D;
-    width: 100%;
-  }
+  // .headerHam {
+  //   display: flex;
+  //   flex-direction: column;
+  //   cursor: pointer;
+  //   z-index: 1001; 
+  // }
 
-  header{
-      height: auto;
-      align-items: center;
-      justify-content: center;
-  }
+  // .headerHam span {
+  //   display: block;
+  //   width: 25px;
+  //   height: 3px;
+  //   padding-left: 0.5px;
+  //   background: #333;
+  //   margin: 4px 0;
+  //   transition: all 0.3s ease;
+  // }
 
-  nav{
-    padding-left: 50px;
-    padding-right: 50px;
-    width: 400px;
-    gap: 20px;
+  // .headerHam.open span:nth-child(1) {
+  //   transform: rotate(45deg) translate(5px, 10px);
+  // }
+
+  // .headerHam.open span:nth-child(2) {
+  //   opacity: 0;
+  // }
+
+  // .headerHam.open span:nth-child(3) {
+  //   transform: rotate(-45deg) translate(5px, -10px);
+  // }
+
+  // .nav-menu {
+  //   position: absolute;
+  //   top: 70px;
+  //   left: 0;
+  //   background-color: #F5EBDC;
+  //   flex-direction: column;
+  //   width: 200px;
+  //   padding: 20px;
+  //   gap: 5px;
+  //   display: none; 
+  //   box-shadow: rgba(56, 56, 56, 0.753) 1px 0px 10px 1px;
+  //   border-radius: 10px;
+  //   z-index: 1000;
+  // }
+
+  // .nav-menu.active {
+  //   display: flex;
+  // }
+
+
+
+  nav ul li{
     align-items: center;
-    text-align: center;
     justify-content: center;
   }
 
-  .titulo-cardapio{
-    justify-content: center;
-    padding: 0%;
-    margin: 0%;
-    text-align: center;
-    align-items: center;
+
+
+
+  // .titulo-cardapio{
+  //   justify-content: center;
+  //   padding: 0%;
+  //   margin: 0%;
+  //   text-align: center;
+  //   align-items: center;
     
-  }
+  // }
 
   .container-menu{
     margin: 0%;

@@ -18,6 +18,8 @@ async function getMenu() {
     console.error(erro);
   }
 }
+
+const interval = 10000
 setInterval(async () => {
   getMenu();
-}, 10000);
+}, interval);
