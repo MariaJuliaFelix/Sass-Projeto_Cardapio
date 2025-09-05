@@ -5,7 +5,7 @@ export async function getOptionsDelivery(id) {
         const response = await fetch(`${URL_BASE_API}/restaurant/product/${id}`, {
           method: 'GET',
           headers: {
-            'ngrok-skip-browser-warning': true,
+            'ngrok-skip-browser-warning': 'true',
             'Content-Type': 'application/json'
           }
         });

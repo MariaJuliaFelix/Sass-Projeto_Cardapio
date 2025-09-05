@@ -68,10 +68,9 @@ export function buttonInformations() {
         buttonConfirm.addEventListener("click", () => {
           const productId = buttonConfirm.dataset.productid;
           if (data.cooking) {
-            // não faz nada aqui, porque o botão vai estar bloqueado porque o pedido está em preparo
           }
           if (data.delivering) {
-            // faz o fetch do confirmar.js pra confirmar o pedido e pode fechar a modal
+            confirmarPedido(id)
           }
           if (!data.cooking && !data.delivering) {
             confirmValuesCreditCard(productId);

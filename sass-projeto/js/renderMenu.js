@@ -11,7 +11,7 @@ export function renderMenu(items) {
           <p class="descricao">${item.description}</p>
           <p class="valor">${price(item.price)}</p>
           <span>${informationStatus(item)}</span>
-          <button disabled="${item.cooking}" class="button-comprar" data-id="${item.id}">${status}</button>
+       <button ${item.cooking ? "disabled" : ""} class="button-comprar" data-id="${item.id}">${status}</button>
       </div>`
     )
   }).join("");
