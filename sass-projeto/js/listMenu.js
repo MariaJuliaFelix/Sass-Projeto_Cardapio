@@ -25,6 +25,7 @@ async function getMenu() {
   }
 }
 
+getMenu()
 
 const interval = 10000
 setInterval(async () => {

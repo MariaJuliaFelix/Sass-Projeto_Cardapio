@@ -78,17 +78,17 @@
 
 
   .titulo-cardapio{
-    padding-left: 0;
-    padding-right: 400px;
-    padding-top: 0;
+    width: auto;
+    left: 0;
     padding-bottom: 1rem;
     font-size: 1rem;
     color: #521C0D;
   }
 
 .container-menu{
-  margin: 0;
-  padding: 0%;
+  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+  margin-top: 2rem;
+  margin-bottom: 3rem;
 }
     body{
         background-color: antiquewhite;
@@ -236,9 +236,14 @@
   // }
 
   .container-menu{
-    margin: 0%;
-   display: flex;
-   flex-wrap: wrap;
+  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+  padding-left: 0%;
+  padding-right: 0%;
+  padding-bottom: 0%;
+  padding-top: 0%;
+    width: auto;
+    gap: 1rem;
+    height: auto;
   }
 
   .card-menu{

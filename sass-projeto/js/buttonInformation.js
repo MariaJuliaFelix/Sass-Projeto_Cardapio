@@ -1,8 +1,9 @@
-import { price } from "./services.js";
+import { price, validarTypeDeliveryModal, informationStatus } from "./services.js";
 import { showLoading, hideLoading } from "./loading.js";
 import { getOptionsDelivery } from "./optionsSelectDelivery.js";
 import { URL_BASE_API } from "./domain.js";
 import { confirmValuesCreditCard } from "./pay.js";
+import { confirmarPedido } from "./confirmar.js";
 
 export function buttonInformations() {
   const buttons = document.querySelectorAll(".button-comprar");
@@ -19,7 +20,7 @@ export function buttonInformations() {
         const response = await fetch(`${URL_BASE_API}/restaurant/product/${id}`, {
           method: 'GET',
           headers: {
-            'ngrok-skip-browser-warning': true,
+            'ngrok-skip-browser-warning': 'true',
             'Content-Type': 'application/json'
           }
         });

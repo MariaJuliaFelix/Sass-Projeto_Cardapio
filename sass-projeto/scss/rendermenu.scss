@@ -1,9 +1,12 @@
 @use 'mixins';
 
 .titulo-cardapio{
-    padding-left: 25rem;
-    padding-top: 9rem;
-    padding-bottom: 1rem;
+    padding-left: 1rem;
+    padding-top: 1rem;
+    margin-top: 5rem;
+    padding-bottom: 2rem;
+    text-align: center;
+    width: auto;
     font-size: 3rem;
     color: #521C0D;
 }
@@ -11,14 +14,14 @@
 .container-menu {
     @include mixins.centralizar;
     flex-wrap: wrap;
-    gap: 50px;
+    gap: 3rem;
     height: 80vh;
     padding-top: 1rem;
     padding-bottom: 5rem;
     z-index: 1;
     position: relative;
-    padding-left: 15rem;
-    padding-right: 15rem;
+    padding-left: 3rem;
+    padding-right: 3rem;
     background-color: #FBF8EF;
 }
 
@@ -44,7 +47,6 @@
     width: 210px;
     height: 230px;
     object-fit: cover;
-  
 }
 
 .descricao {

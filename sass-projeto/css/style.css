@@ -320,16 +320,16 @@ footer .footer-credit {
     display: none;
   }
   .titulo-cardapio {
-    padding-left: 0;
-    padding-right: 400px;
-    padding-top: 0;
+    width: auto;
+    left: 0;
     padding-bottom: 1rem;
     font-size: 1rem;
     color: #521C0D;
   }
   .container-menu {
-    margin: 0;
-    padding: 0%;
+    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+    margin-top: 2rem;
+    margin-bottom: 3rem;
   }
   body {
     background-color: antiquewhite;
@@ -396,9 +396,14 @@ footer .footer-credit {
     justify-content: center;
   }
   .container-menu {
-    margin: 0%;
-    display: flex;
-    flex-wrap: wrap;
+    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+    padding-left: 0%;
+    padding-right: 0%;
+    padding-bottom: 0%;
+    padding-top: 0%;
+    width: auto;
+    gap: 1rem;
+    height: auto;
   }
   .card-menu {
     width: 250px;
@@ -426,9 +431,12 @@ footer .footer-credit {
   }
 }
 .titulo-cardapio {
-  padding-left: 25rem;
-  padding-top: 9rem;
-  padding-bottom: 1rem;
+  padding-left: 1rem;
+  padding-top: 1rem;
+  margin-top: 5rem;
+  padding-bottom: 2rem;
+  text-align: center;
+  width: auto;
   font-size: 3rem;
   color: #521C0D;
 }
@@ -438,14 +446,14 @@ footer .footer-credit {
   justify-content: center;
   align-items: center;
   flex-wrap: wrap;
-  gap: 50px;
+  gap: 3rem;
   height: 80vh;
   padding-top: 1rem;
   padding-bottom: 5rem;
   z-index: 1;
   position: relative;
-  padding-left: 15rem;
-  padding-right: 15rem;
+  padding-left: 3rem;
+  padding-right: 3rem;
   background-color: #FBF8EF;
 }
 
@@ -765,6 +773,10 @@ form small {
 .trilho.dark .indicador {
   left: 30px;
   background-color: black;
+}
+
+body.dark {
+  background-color: #4d4d4d;
 }
 
 * {

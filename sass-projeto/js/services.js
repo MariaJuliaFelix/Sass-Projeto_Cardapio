@@ -30,6 +30,7 @@
     }
     return "Fazer pedido";
   }
+  
 export function price(value) {
   return new Intl.NumberFormat("pt-BR", { 
     style: "currency", 
