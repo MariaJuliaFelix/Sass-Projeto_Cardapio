@@ -16,3 +16,32 @@ export function renderMenu(items) {
     )
   }).join("");
 }
+
+// import { validarStatusDeliveryMenu, informationStatus, price } from "./services.js";
+
+// export function renderMenu(menuItems) {
+//   const container = document.getElementById("menu_container");
+//   if (!container) return;
+
+//   container.innerHTML = ""; // limpa antes de renderizar
+
+//   menuItems.forEach(item => {
+//     // cria o card do produto
+//     const card = document.createElement("div");
+//     card.classList.add("card-produto");
+
+//     card.innerHTML = `
+//       <img src="${item.url_banner}" alt="${item.description}">
+//       <h2>${item.description}</h2>
+//       <p>${price(item.price)}</p>
+//       <span class="status-info">${informationStatus(item) || ""}</span>
+//       <button 
+//         class="button-comprar"
+//         data-id="${item.id}">
+//         ${validarStatusDeliveryMenu(item)}
+//       </button>
+//     `;
+
+//     container.appendChild(card);
+//   });
+// }

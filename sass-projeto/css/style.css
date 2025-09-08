@@ -789,4 +789,8 @@ body {
   font-family: "Poppins", sans-serif;
 }
 
+#meuModal {
+  display: none;
+}
+
 /*# sourceMappingURL=style.css.map */

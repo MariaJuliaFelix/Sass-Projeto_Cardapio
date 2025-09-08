@@ -33,7 +33,3 @@ trilho.addEventListener('click', ()=>{
     trilho.classList.toggle('dark')
     body.classList.toggle('dark')
 } )
-
-
-const modal = document.getElementById("meuModal");
-modal.style.display = "none";

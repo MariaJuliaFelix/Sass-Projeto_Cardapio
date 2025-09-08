@@ -11,11 +11,10 @@ export function buttonInformations() {
   const span = modal.querySelector(".fechar");
   const modalBody = modal.querySelector("#modal-body");
   const header = document.querySelector("header");
-  modal.style.display = "none";
+
   buttons.forEach(button => {
     button.addEventListener("click", async function () {
       const id = this.dataset.id;
-      console.log("Clicou no botão com id:", id);
       try {
         const response = await fetch(`${URL_BASE_API}/restaurant/product/${id}`, {
           method: 'GET',
@@ -24,17 +23,17 @@ export function buttonInformations() {
             'Content-Type': 'application/json'
           }
         });
-        if (!response.ok) {
-          throw new Error("Erro na requisição: " + response.status);
-        }
+        if (!response.ok) throw new Error("Erro na requisição: " + response.status);
         const data = await response.json();
-        console.log("Dados recebidos:", data);
+
         showLoading();
         header.classList.add("hide");
+
+        // Monta o conteúdo do modal
         modalBody.innerHTML = `
           <h2>${data.description}</h2>
           <img class="img-information" src="${data.url_banner}" alt="${data.description}">
-          <span>${informationStatus(data)}</span>
+          <span>${informationStatus(data) || ""}</span>
           <h3>${price(data.price)}</h3>
           <form class="forma_de_pagamento" id="form-pay">
             <h2>Forma de pagamento</h2>
@@ -54,35 +53,58 @@ export function buttonInformations() {
             <button 
               type="button"
               id="confirmar-pedido"
-              disabled="${data.cooking}"
               data-productid="${data.id}"
               class="button-finalizar button-confirm"
             >
-                ${validarTypeDeliveryModal(data)}
+              ${validarTypeDeliveryModal(data)}
             </button>
           </form>
         `;
-        
+
+        // Corrige o disabled corretamente
+        const buttonConfirm = modalBody.querySelector(".button-confirm");
+        buttonConfirm.disabled = !!data.cooking;
+
         getOptionsDelivery(id);
 
-        const buttonConfirm = modalBody.querySelector(".button-confirm");
         buttonConfirm.addEventListener("click", () => {
           const productId = buttonConfirm.dataset.productid;
-          if (data.cooking) {
-          }
+          if (data.cooking) return;
           if (data.delivering) {
-            confirmarPedido(id)
+            confirmarPedido(id);
+            return;
           }
-          if (!data.cooking && !data.delivering) {
-            confirmValuesCreditCard(productId);
-          }
+          confirmValuesCreditCard(productId);
         });
+
+        // ---- ABRIR MODAL ----
         modal.style.display = "flex";
         document.body.style.overflow = "hidden";
+        window.__modalOpen = true;
+
+        // ---- FECHAR MODAL (X) ----
+        span.onclick = function () {
+          modal.style.display = "none";
+          document.body.style.overflow = "";
+          header.classList.remove("hide");
+          window.__modalOpen = false;
+        };
+
+        // ---- FECHAR MODAL (clicando fora) ----
+        modal.onclick = function (e) {
+          if (e.target === modal) {
+            modal.style.display = "none";
+            document.body.style.overflow = "";
+            header.classList.remove("hide");
+            window.__modalOpen = false;
+          }
+        };
+
       } catch (erro) {
         console.error("Erro no fetch:", erro);
       } finally {
         hideLoading();
       }
     });
-  })}
+  });
+}

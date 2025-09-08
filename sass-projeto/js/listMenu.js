@@ -26,8 +26,10 @@ async function getMenu() {
 }
 
 getMenu()
-
-const interval = 10000
-setInterval(async () => {
+const interval = 10000;
+setInterval(() => {
+  // não atualizar se o modal estiver aberto
+  if (window.__modalOpen) return;
   getMenu();
 }, interval);
+
