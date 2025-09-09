@@ -1,42 +1,31 @@
 import { URL_BASE_API } from "./domain.js";
-
+import { getMenu } from "./listMenu.js";
 
 export async function confirmarPedido(itemId) {
-try {
-const response = await fetch(`${URL_BASE_API}/restaurant/product/confirm/${itemId}`, {
-method: "PATCH",
-headers: {
-"ngrok-skip-browser-warning": "true",
-"Content-Type": "application/json",
-},
-body: null
-});
+  try {
+    const response = await fetch(`${URL_BASE_API}/restaurant/product/confirm/${itemId}`, {
+      method: "PATCH",
+      headers: {
+        "ngrok-skip-browser-warning": "true",
+        "Content-Type": "application/json",
+      },
+      body: null
+    });
 
+    if (!response.ok) throw new Error("Erro ao confirmar pedido");
 
-if (!response.ok) throw new Error("Erro ao confirmar pedido");
+    const card = document.getElementById(`card-${itemId}`);
+    if (card) {
+      card.dataset.hasOrder = "false";
+      card.dataset.cooking = "false";
+      card.dataset.delivering = "false";
+    }
 
-const card = document.getElementById(`card-${itemId}`);
-if (card) {
-card.dataset.hasOrder = "false";
-card.dataset.cooking = "false";
-card.dataset.delivering = "false";
+    getMenu();
 
-
-const button = card.querySelector('button.button-comprar');
-if (button) {
-button.textContent = "Comprar";
-button.disabled = false;
-}
-
-
-const info = card.querySelector('.status-info');
-if (info) info.textContent = "";
-}
-
-
-console.log("Pedido confirmado (usuário):", itemId);
-}
-catch (erro) {
-console.error("Erro na requisição:", erro);
-}
+    console.log("Pedido confirmado (usuário):", itemId);
+  }
+  catch (erro) {
+    console.error("Erro na requisição:", erro);
+  }
 }

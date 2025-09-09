@@ -1,5 +1,5 @@
 import { URL_BASE_API } from "./domain.js";
-
+import { getMenu } from "./listMenu.js"; 
 const showErro = (field, errorText) => {
   field.classList.add("erro");
   const errorElement = document.createElement("small");
@@ -79,8 +79,6 @@ export async function confirmValuesCreditCard(idProduct) {
     pick_up: pickUp
   };
 
-  const jsonString = JSON.stringify(body);
-
   try {
     const response = await fetch(`${URL_BASE_API}/restaurant/product/pay/${idProduct}`, {
       method: "POST",
@@ -88,7 +86,7 @@ export async function confirmValuesCreditCard(idProduct) {
         "ngrok-skip-browser-warning": "true",
         "Content-Type": "application/json",
       },
-      body: jsonString,
+      body: JSON.stringify(body),
     });
 
     if (!response.ok) {
@@ -101,11 +99,8 @@ export async function confirmValuesCreditCard(idProduct) {
     const data = await response.json();
     console.log("Pagamento aprovado:", data);
 
-    import("./listMenu.js").then(({ default: refreshMenu }) => refreshMenu && refreshMenu());
-
     const modal = document.getElementById('meuModal');
     const header = document.querySelector('header');
-
     if (modal) {
       modal.style.display = 'none';
       document.body.style.overflow = '';
@@ -113,11 +108,11 @@ export async function confirmValuesCreditCard(idProduct) {
       window.__modalOpen = false;
     }
 
+    getMenu();
+
     alert("Pagamento realizado com sucesso!");
   } catch (error) {
     console.error("Erro ao processar pagamento:", error);
     alert("Ocorreu um erro na comunicação com o servidor.");
   }
-
-  console.log(idProduct);
 }

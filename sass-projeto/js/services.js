@@ -5,10 +5,10 @@ export function validarStatusDeliveryMenu(item) {
     return "Comprar";
   }
 
-  if (item.cooking) {
+  if (item.cooking == true) {
     return "Preparando pedido...";
   }
-  if (item.delivering) {
+  if (item.delivering  == true) {
     return "Acompanhar pedido";
   }
   return "Comprar";

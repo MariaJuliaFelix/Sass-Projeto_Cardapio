@@ -2,7 +2,7 @@ import { URL_BASE_API } from "./domain.js";
 import { buttonInformations } from "./buttonInformation.js";
 import { renderMenu } from "./renderMenu.js";
 
-async function getMenu() {
+export async function getMenu() {
 try {
 const response = await fetch(`${URL_BASE_API}/restaurant/menu`, {
 method: 'GET',
@@ -27,10 +27,9 @@ console.error("Erro na requisição do menu:", erro);
 }
 }
 
-
 getMenu();
 const interval = 10000;
 setInterval(() => {
-if (window.__modalOpen) return;
-getMenu();
+  if (window.__modalOpen) return;
+  getMenu();
 }, interval);
