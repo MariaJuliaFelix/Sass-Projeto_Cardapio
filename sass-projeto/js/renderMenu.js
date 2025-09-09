@@ -1,7 +1,7 @@
 import { price, validarStatusDeliveryMenu, informationStatus } from "./services.js";
 
 export function renderMenu(items) {
-// console for dev
+
 console.log("Itens recebidos:", items);
 const containerMenu = document.querySelector("#container_menu");
 if (!containerMenu) return;
