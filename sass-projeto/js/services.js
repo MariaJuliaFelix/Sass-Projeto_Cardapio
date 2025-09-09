@@ -1,13 +1,10 @@
-// Sempre que mostrar no cardápio
 export function validarStatusDeliveryMenu(item) {
   if (!item) return "Item inválido";
 
-  // Se não houver pedido ainda, sempre mostra "Comprar"
   if (!item.hasOrder) {
     return "Comprar";
   }
 
-  // A partir daqui, só mexe se o item já tem pedido feito
   if (item.cooking) {
     return "Preparando pedido...";
   }
@@ -18,7 +15,7 @@ export function validarStatusDeliveryMenu(item) {
 }
 
 export function informationStatus(item) {
-  if (!item || !item.hasOrder) return ""; // sem pedido, sem info extra
+  if (!item || !item.hasOrder) return ""; 
 
   if (item.cooking) {
     return `Seu pedido está sendo preparado`;
@@ -34,7 +31,7 @@ export function validarTypeDeliveryModal(item) {
   if (!item) return "Item inválido";
 
   if (!item.hasOrder) {
-    return "Fazer pedido"; // estado inicial padrão
+    return "Fazer pedido"; 
   }
 
   if (item.cooking) {

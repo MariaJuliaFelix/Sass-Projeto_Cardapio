@@ -1,31 +1,42 @@
 import { URL_BASE_API } from "./domain.js";
 
+
 export async function confirmarPedido(itemId) {
-  try {
-    const response = await fetch(`${URL_BASE_API}/restaurant/product/confirm/${itemId}`, {
-      method: "PATCH",
-      headers: {
-        "ngrok-skip-browser-warning": "true",
-        "Content-Type": "application/json",
-      },
-      body: null
-    });
+try {
+const response = await fetch(`${URL_BASE_API}/restaurant/product/confirm/${itemId}`, {
+method: "PATCH",
+headers: {
+"ngrok-skip-browser-warning": "true",
+"Content-Type": "application/json",
+},
+body: null
+});
 
-    if (!response.ok) throw new Error("Erro ao confirmar pedido");
 
-    // Atualiza o botão no cardápio
-    const button = document.querySelector(`button[data-id="${itemId}"]`);
-    if (button) button.textContent = "Acompanhar pedido";
+if (!response.ok) throw new Error("Erro ao confirmar pedido");
 
-    // Marca o item como tendo um pedido ativo (frontend)
-    const productElement = document.querySelector(`[data-id="${itemId}"]`);
-    if (productElement) {
-      productElement.dataset.hasOrder = "true"; 
-    }
+const card = document.getElementById(`card-${itemId}`);
+if (card) {
+card.dataset.hasOrder = "false";
+card.dataset.cooking = "false";
+card.dataset.delivering = "false";
 
-    console.log("Pedido confirmado!");
-  }
-  catch (erro) {
-    console.error("Erro na requisição:", erro);
-  }
+
+const button = card.querySelector('button.button-comprar');
+if (button) {
+button.textContent = "Comprar";
+button.disabled = false;
+}
+
+
+const info = card.querySelector('.status-info');
+if (info) info.textContent = "";
+}
+
+
+console.log("Pedido confirmado (usuário):", itemId);
+}
+catch (erro) {
+console.error("Erro na requisição:", erro);
+}
 }

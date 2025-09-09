@@ -72,42 +72,52 @@ export async function confirmValuesCreditCard(idProduct) {
   if (hasError) return;
 
   const body = {
-  credit_card_name: cardName,
-  credit_card_number: cardNumber,
-  credit_card_date_expiration: cardDate,
-  credit_card_code: cardCode,
-  pick_up: pickUp
-};
+    credit_card_name: cardName,
+    credit_card_number: cardNumber,
+    credit_card_date_expiration: cardDate,
+    credit_card_code: cardCode,
+    pick_up: pickUp
+  };
 
-
-const jsonString = JSON.stringify(body)
+  const jsonString = JSON.stringify(body);
 
   try {
-  const response = await fetch(`${URL_BASE_API}/restaurant/product/pay/${idProduct}`, {
-    method: "POST",
-    headers: {
-      "ngrok-skip-browser-warning": true,
-      "Content-Type": "application/json",
-    },
-    body: jsonString,
-  });
+    const response = await fetch(`${URL_BASE_API}/restaurant/product/pay/${idProduct}`, {
+      method: "POST",
+      headers: {
+        "ngrok-skip-browser-warning": "true",
+        "Content-Type": "application/json",
+      },
+      body: jsonString,
+    });
 
-  if (!response.ok) {
-    const errorData = await response.json();
-    console.error("Erro do servidor:", errorData);
-    alert(`Erro: ${errorData.message || "Não foi possível processar o pagamento"}`);
-    return;
+    if (!response.ok) {
+      const errorData = await response.json();
+      console.error("Erro do servidor:", errorData);
+      alert(`Erro: ${errorData.message || "Não foi possível processar o pagamento"}`);
+      return;
+    }
+
+    const data = await response.json();
+    console.log("Pagamento aprovado:", data);
+
+    import("./listMenu.js").then(({ default: refreshMenu }) => refreshMenu && refreshMenu());
+
+    const modal = document.getElementById('meuModal');
+    const header = document.querySelector('header');
+
+    if (modal) {
+      modal.style.display = 'none';
+      document.body.style.overflow = '';
+      if (header) header.classList.remove('hide');
+      window.__modalOpen = false;
+    }
+
+    alert("Pagamento realizado com sucesso!");
+  } catch (error) {
+    console.error("Erro ao processar pagamento:", error);
+    alert("Ocorreu um erro na comunicação com o servidor.");
   }
 
-  const data = await response.json();
-  console.log("Pagamento aprovado:", data);
-  console.log(jsonString)
-  alert("Pagamento realizado com sucesso!");
-} catch (error) {
-  console.error("Erro ao processar pagamento:", error);
-  alert("Ocorreu um erro na comunicação com o servidor.");
-}
-
-console.log(idProduct)
-
+  console.log(idProduct);
 }
