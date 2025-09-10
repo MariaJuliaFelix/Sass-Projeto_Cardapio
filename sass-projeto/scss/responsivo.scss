@@ -5,33 +5,37 @@
   @include mixins.centralizar;
   position: fixed;
   top: 10px; 
-  left: 80px;
+  width: auto;
+  gap: 30px;
   transform: translateX(-50%);
   z-index: 100;
-  background-color: transparent;
-  padding: 0px;
+  background-color: #f5ebdcb6;
+  padding: 5px;
   box-shadow: none;
 }
 
 .trilho{
-  right: 0;
-  left: 140px;
+ margin: 0%;
 }
+
+nav{
+  padding-left: 3px;
+  padding-right: 3px;
+}
+
 
   .headerHam {
     display: flex;
+    left: 0%;
     flex-direction: column;
     cursor: pointer;
     z-index: 1001; 
-    
   }
 
   .headerHam span {
     display: block;
     width: 25px;
     height: 3px;
-    padding-right: 4px;
-    left: 0;
     background: #333;
     margin: 4px 0;
     transition: all 0.3s ease;
@@ -52,13 +56,13 @@
   .nav-menu {
     position: absolute;
     top: 50px;
-    left: 90px;
+    left: 3px;
     background-color: #F5EBDC;
     flex-direction: column;
-    width: 180px;
+    width: 250px;
     padding: 10px;
     text-align: center;
-    gap: 8px;
+    gap: 4px;
     display: none; 
     box-shadow: rgba(56, 56, 56, 0.753) 1px 0px 10px 1px;
     border-top-left-radius: 0%;
@@ -73,32 +77,35 @@
   }
 
   .logo img{
-    display: none;
+width: 120px;
+height: auto;
   }
 
 
-  .titulo-cardapio{
+.titulo-cardapio {
+    padding-left: 0;
+    padding-top: 0;
+    margin-top: 20px;
+    padding-bottom: 10px;
+    text-align: center;
     width: auto;
-    left: 0;
-    padding-bottom: 1rem;
     font-size: 1rem;
     color: #521C0D;
-  }
+}
 
 .container-menu{
+  height: auto;
   grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
   margin-top: 2rem;
   margin-bottom: 3rem;
 }
     body{
-        background-color: antiquewhite;
+      background-color: antiquewhite;
     }
 
     .banner{
-        height: auto;
-
+      height: auto;
     }
-
 
   .sobre {
     flex-direction: column;
@@ -116,15 +123,15 @@
     width: 100%;
     max-width: 100%;
   }
-.conteudo p{
-    font-size: 15px;
-   
-}
 
-.conteudo .texto-destaque{
-    font-size: 16px;
+  .conteudo p{
+      font-size: 15px;
+  }
 
-}
+  .conteudo .texto-destaque{
+      font-size: 16px;
+
+  }
 
   .imagem-sobre img {
     display: none;
@@ -168,72 +175,42 @@
 
 @media (max-width: 1024px) {
 
-  // .headerHam {
-  //   display: flex;
-  //   flex-direction: column;
-  //   cursor: pointer;
-  //   z-index: 1001; 
-  // }
+  header {
+  @include mixins.centralizar;
+  position: fixed;
+  top: 15px; 
+  left: 50%;
+  gap: 25px;
+  transform: translateX(-50%);
+  z-index: 100;
+  background-color: #F5EBDC;
+  padding: 10px 45px;
+  border-radius: 50px;
+  width: auto;
+  box-shadow: rgba(56, 56, 56, 0.753) 1px 0px 10px 1px;
+  transition: transform 0.3s ease-in-out, border-radius 0.2s ease-in-out;
+}
 
-  // .headerHam span {
-  //   display: block;
-  //   width: 25px;
-  //   height: 3px;
-  //   padding-left: 0.5px;
-  //   background: #333;
-  //   margin: 4px 0;
-  //   transition: all 0.3s ease;
-  // }
+a{
+  font-size: 1rem;
+}
+.logo img{
+  width: 130px;
+  height: auto;
+  margin: 0%;
+}
 
-  // .headerHam.open span:nth-child(1) {
-  //   transform: rotate(45deg) translate(5px, 10px);
-  // }
-
-  // .headerHam.open span:nth-child(2) {
-  //   opacity: 0;
-  // }
-
-  // .headerHam.open span:nth-child(3) {
-  //   transform: rotate(-45deg) translate(5px, -10px);
-  // }
-
-  // .nav-menu {
-  //   position: absolute;
-  //   top: 70px;
-  //   left: 0;
-  //   background-color: #F5EBDC;
-  //   flex-direction: column;
-  //   width: 200px;
-  //   padding: 20px;
-  //   gap: 5px;
-  //   display: none; 
-  //   box-shadow: rgba(56, 56, 56, 0.753) 1px 0px 10px 1px;
-  //   border-radius: 10px;
-  //   z-index: 1000;
-  // }
-
-  // .nav-menu.active {
-  //   display: flex;
-  // }
+nav{
+  padding-left: 0px;
+  padding-right: 0px;
+}
 
 
-
-  nav ul li{
-    align-items: center;
-    justify-content: center;
-  }
-
-
-
-
-  // .titulo-cardapio{
-  //   justify-content: center;
-  //   padding: 0%;
-  //   margin: 0%;
-  //   text-align: center;
-  //   align-items: center;
-    
-  // }
+header nav ul {
+  list-style: none;
+  display: flex;
+  gap: 25px;
+}
 
   .container-menu{
   grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));

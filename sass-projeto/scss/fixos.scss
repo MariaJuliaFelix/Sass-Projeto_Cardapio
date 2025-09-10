@@ -50,7 +50,6 @@ li:hover {
 
 footer{
     @include mixins.centralizar;
-    padding: 30px;
     box-shadow: rgba(20, 20, 20, 0.26) 1px 0px 10px 1px;
     background-color: #F5EBDC;
     border-top: 1px solid #e5e7eb;
@@ -81,29 +80,17 @@ footer{
     color: #FE7743;
   }
   
-  .footer-apps {
-    display: flex;
-    justify-content: center;
-    gap: 20px;
-  
-    margin-top: 50px;
-  }
-  
-  .footer-apps img {
-    height: 45px;
-  }
-  
   .footer-socials {
     display: flex;
-    justify-content: center;
     gap: 15px;
+    justify-content: center;
     margin-bottom: 50px;
     margin-top: 50px;
   }
   
   .footer-socials a {
     display: inline-block;
-    background-color: #f3f4f6;
+    background-color: #fcdaa7;
     padding: 10px;
     border-radius: 8px;
     transition: background-color 0.3s;
@@ -121,4 +108,9 @@ footer{
     color: #6b7280;
     font-size: 0.9rem;
   }
+  
+nav{
+  padding-left: 0px;
+  padding-right: 0px;
+}
 }

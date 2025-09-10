@@ -15,13 +15,13 @@
     @include mixins.centralizar;
     flex-wrap: wrap;
     gap: 3rem;
-    height: 80vh;
-    padding-top: 1rem;
+    height: auto;
+    padding-top: 2rem;
     padding-bottom: 5rem;
+    margin-left: 3rem;
+    margin-right: 4rem;
     z-index: 1;
     position: relative;
-    padding-left: 3rem;
-    padding-right: 3rem;
     background-color: #FBF8EF;
 }
 
