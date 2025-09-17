@@ -48,6 +48,11 @@ modalBody.innerHTML = `
     <div class="endereco">
         <h2>Coloque o endereço para entrega</h2>
         <input id="cep" placeholder="Coloque o seu CEP" type="text">
+        <section class="form_endereco">
+        <input id="rua" placeholder="Rua" type="text">
+        <input id="bairro" placeholder="Bairro" type="text">
+        <input id="numero-casa" placeholder="Número da residencia (obrigatório)" type="number">
+        </section>
     </div>
     <div class="endereco_establishment">
         <h2>Endereço para retirada do pedido</h2>
