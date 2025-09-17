@@ -52,8 +52,12 @@
 }
 
 .icon {
-  font-size: 32px;
+  justify-content: center;
   margin-bottom: 10px;
+
+  img{
+    width: 30px;
+  }
 }
 
 .text {

@@ -34,3 +34,10 @@ export function price(value) {
     currency: "BRL" 
   }).format(value);
 }
+
+
+export function date_format(value) {
+const formatterShort = new Intl.DateTimeFormat('pt-BR', {
+  year: 'numeric', month: '2-digit', day: '2-digit'
+}).format(value);;
+}

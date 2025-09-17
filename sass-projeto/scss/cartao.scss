@@ -1,0 +1,47 @@
+.cartao_countainer {
+    width: 400px;
+    height: 230px;
+    background: linear-gradient(135deg, #ee6d17, #ff9f43);
+    border-radius: 15px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+    padding: 20px;
+    color: #fff;
+    font-family: "Segoe UI", sans-serif;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    position: relative;
+    overflow: hidden;
+    margin-bottom: 20px;
+}
+
+.img_cartao {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+    margin-top: 0.5rem;
+}
+
+.img_cartao img {
+    height: 40px;
+}
+
+.num_cartao {
+    font-size: 1.4rem;
+    letter-spacing: 3px;
+    margin: 10px 0;
+}
+
+.nome_cartao {
+    font-size: 1.1rem;
+    font-weight: 600;
+}
+
+.sep-textos {
+    display: flex;
+    justify-content: space-between;
+    margin-top: auto;
+    font-size: 0.9rem;
+    letter-spacing: 1px;
+}

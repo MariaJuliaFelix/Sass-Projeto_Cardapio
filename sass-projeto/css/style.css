@@ -174,8 +174,11 @@ footer nav {
 }
 
 .icon {
-  font-size: 32px;
+  justify-content: center;
   margin-bottom: 10px;
+}
+.icon img {
+  width: 30px;
 }
 
 .text {
@@ -628,7 +631,7 @@ footer nav {
   height: 100vh;
   justify-content: center;
   align-items: center;
-  background-color: rgba(0, 0, 0, 0.4);
+  background-color: rgba(0, 0, 0, 0.562);
   display: flex;
   justify-content: center;
   align-items: center;
@@ -660,12 +663,21 @@ footer nav {
 
 .img-information {
   width: 100%;
-  max-width: 420px;
-  height: auto;
-  margin: 25px 0;
+  max-width: 500px;
+  height: 350px;
+  margin-top: 20px;
+  margin-bottom: 30px;
   border-radius: 15px;
   object-fit: cover;
-  box-shadow: 0 8px 20px rgba(104, 103, 103, 0.356);
+  box-shadow: 0 8px 20px rgba(104, 103, 103, 0.13);
+}
+
+h3 {
+  font-size: 1.5rem;
+  padding-left: 10px;
+  margin-bottom: 30px;
+  font-weight: 900;
+  font-family: sans-serif;
 }
 
 .forma_de_pagamento {
@@ -685,6 +697,7 @@ footer nav {
   font-size: 22px;
   color: #222;
   margin-bottom: 15px;
+  margin-top: 15px;
   font-weight: 700;
   text-align: center;
 }
@@ -715,6 +728,7 @@ footer nav {
 
 .select-lista {
   width: 100%;
+  margin-bottom: 30px;
   position: relative;
 }
 
@@ -748,7 +762,7 @@ footer nav {
 }
 
 .button-finalizar {
-  background-color: rgb(255, 229, 196);
+  background-color: rgba(254, 120, 67, 0.7137254902);
   padding: 10px 45px 10px 45px;
   text-align: center;
   justify-content: center;
@@ -761,7 +775,7 @@ footer nav {
 }
 
 .button-finalizar:hover {
-  background-color: rgb(255, 200, 120);
+  background-color: #FE7743;
   transform: scale(1.01);
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.115);
   transition: all 0.3s ease;
@@ -778,6 +792,115 @@ form small {
   margin-top: 5px;
   display: block;
   color: red;
+}
+
+.endereco {
+  background: rgba(255, 253, 253, 0.9607843137);
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  margin-bottom: 20px;
+  margin-top: 20px;
+}
+
+.endereco h2 {
+  font-size: 1.2rem;
+  margin-bottom: 10px;
+  color: #333;
+}
+
+.endereco input {
+  width: 100%;
+  max-width: 430px;
+  padding: 12px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  outline: none;
+  font-size: 1rem;
+  transition: 0.3s;
+}
+
+.endereco input:focus {
+  border-color: #ee6d17;
+  box-shadow: 0 0 5px rgba(238, 109, 23, 0.6);
+}
+
+.endereco_establishment {
+  background: #fff;
+  border-radius: 12px;
+  padding: 15px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.endereco_establishment h2 {
+  font-size: 1.2rem;
+  font-weight: 700;
+}
+
+.endereco_establishment .mapa {
+  width: 100%;
+  border-radius: 10px;
+  border: none;
+  height: 220px;
+}
+
+.endereco_establishment p {
+  font-size: 0.95rem;
+  font-weight: 500;
+  margin-top: 8px;
+  font-family: "Segoe UI", sans-serif;
+  color: #444;
+}
+
+.cartao_countainer {
+  width: 400px;
+  height: 230px;
+  background: linear-gradient(135deg, #ee6d17, #ff9f43);
+  border-radius: 15px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+  padding: 20px;
+  color: #fff;
+  font-family: "Segoe UI", sans-serif;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  position: relative;
+  overflow: hidden;
+  margin-bottom: 20px;
+}
+
+.img_cartao {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+  margin-top: 0.5rem;
+}
+
+.img_cartao img {
+  height: 40px;
+}
+
+.num_cartao {
+  font-size: 1.4rem;
+  letter-spacing: 3px;
+  margin: 10px 0;
+}
+
+.nome_cartao {
+  font-size: 1.1rem;
+  font-weight: 600;
+}
+
+.sep-textos {
+  display: flex;
+  justify-content: space-between;
+  margin-top: auto;
+  font-size: 0.9rem;
+  letter-spacing: 1px;
 }
 
 .trilho {

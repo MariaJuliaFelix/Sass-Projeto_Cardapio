@@ -29,3 +29,14 @@ export async function confirmarPedido(itemId) {
     console.error("Erro na requisição:", erro);
   }
 }
+
+
+
+// Swal.fire({
+//   title: "Confirmar pedido!",
+//   icon: "success",
+//   draggable: true
+// });
+
+// //button_confirm 
+// lemrar de colocar quando o loop já tiver ocorrido e o pedido já ter chego não esquecerrr de formatar a data!!!!!!!!
