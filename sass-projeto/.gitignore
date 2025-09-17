@@ -1,0 +1,12 @@
+node_modules/
+
+.vscode/
+
+*.css.map
+*.map
+
+css/style.css.map
+
+(Insomnia Import)*
+*.insomnia/
+*.insomnia.json
