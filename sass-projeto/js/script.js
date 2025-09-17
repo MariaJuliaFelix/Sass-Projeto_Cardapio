@@ -33,3 +33,8 @@ trilho.addEventListener('click', ()=>{
     trilho.classList.toggle('dark')
     body.classList.toggle('dark')
 } )
+
+// import Swal from 'sweetalert2/dist/sweetalert2.js'
+// import 'sweetalert2/src/sweetalert2.scss'
+
+// biblioteca de alertas
