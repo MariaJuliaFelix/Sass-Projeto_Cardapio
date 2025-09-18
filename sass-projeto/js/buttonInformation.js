@@ -46,7 +46,9 @@ modalBody.innerHTML = `
             <option id="establishment" value="establishment">Retirada do pedido</option>
         </select>
     </div>
+    <div class="cep-card">
     <form id="form-cep">
+        <h3>Endereço para entrega</h3>
         <label for="cep">CEP:</label><br>
         <input type="text" name="cep" id="cep" autofocus required>
         <button type="button" id="buscar-cep">Buscar</button><br>
@@ -55,6 +57,7 @@ modalBody.innerHTML = `
         <label for="bairro">Bairro:</label><br>
         <input type="text" name="bairro" id="bairro" required><br>
     </form>
+    </div>
     <div class="endereco_establishment">
         <h2>Endereço para retirada do pedido</h2>
         <iframe class="mapa" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d49510816.39016882!2d-152.0254347!3d40.764215000000014!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c258f9e15bf1c1%3A0xafe511716724bf3f!2sburger%20joint!5e0!3m2!1sen!2sbr!4v1758062150655!5m2!1sen!2sbr" width="450" height="200" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
@@ -92,6 +95,32 @@ modalBody.innerHTML = `
         </button>
     </form>
 `;
+
+const sendMethodSelect = modalBody.querySelector('#send_method');
+const cepCard = modalBody.querySelector('.cep-card');
+const enderecoEstablishment = modalBody.querySelector('.endereco_establishment');
+
+function atualizarVisibilidadeEndereco() {
+  const val = sendMethodSelect?.value;
+  if (val === 'delivery') {
+    if (cepCard) cepCard.style.display = 'block';
+    if (enderecoEstablishment) enderecoEstablishment.style.display = 'none';
+    const cepInput = modalBody.querySelector('#cep');
+    if (cepInput) cepInput.focus();
+  } else if (val === 'establishment') {
+    if (cepCard) cepCard.style.display = 'none';
+    if (enderecoEstablishment) enderecoEstablishment.style.display = 'flex';
+  } else {
+    if (cepCard) cepCard.style.display = 'none';
+    if (enderecoEstablishment) enderecoEstablishment.style.display = 'flex';
+  }
+}
+
+atualizarVisibilidadeEndereco();
+
+if (sendMethodSelect) {
+  sendMethodSelect.addEventListener('change', atualizarVisibilidadeEndereco);
+}
 
 const buttonBuscarCEP = modalBody.querySelector('#buscar-cep');
 buttonBuscarCEP.addEventListener('click', (e) => {

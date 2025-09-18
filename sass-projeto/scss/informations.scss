@@ -149,21 +149,6 @@ form small {
     color: #333;
 }
 
-.endereco input {
-    width: 100%;
-    max-width: 430px;
-    padding: 12px;
-    border-radius: 8px;
-    border: 1px solid #ccc;
-    outline: none;
-    font-size: 1rem;
-    transition: 0.3s;
-}
-
-.endereco input:focus {
-    border-color: #ee6d17;
-    box-shadow: 0 0 5px rgba(238, 109, 23, 0.6);
-}
 
 .endereco_establishment {
     background: #fff;

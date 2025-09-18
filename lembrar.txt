@@ -2,9 +2,9 @@ Finalizar detalhes como:
 
 Responsivo;
 
-Data formatada automatica;
+Data formatada automatica; 
 
-utilizar API no CEP para que encontre o endereço da pessoa automaticamente;
+utilizar API no CEP para que encontre o endereço da pessoa automaticamente; feitooo
 
 Colocar o check na hora que for confirmar pedido, após ele ser entregue;
 
