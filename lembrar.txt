@@ -1,0 +1,16 @@
+Finalizar detalhes como:
+
+Responsivo;
+
+Data formatada automatica;
+
+utilizar API no CEP para que encontre o endereço da pessoa automaticamente;
+
+Colocar o check na hora que for confirmar pedido, após ele ser entregue;
+
+Não esquecer de colocar sobre os pedidos inválidos;
+
+Fazer com que os dados do cartão vão acompanhando o cartão.
+
+Fazer ligação com whatsapp
+

@@ -35,9 +35,13 @@ export function price(value) {
   }).format(value);
 }
 
-
 export function date_format(value) {
-const formatterShort = new Intl.DateTimeFormat('pt-BR', {
-  year: 'numeric', month: '2-digit', day: '2-digit'
-}).format(value);;
+  const date = new Date(value);
+
+  const formatter = new Intl.DateTimeFormat('pt-BR', {
+    month: '2-digit',
+    year: '2-digit' 
+  });
+
+  return formatter.format(date); 
 }
