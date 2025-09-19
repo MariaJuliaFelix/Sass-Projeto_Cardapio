@@ -61,7 +61,7 @@ modalBody.innerHTML = `
     <div class="endereco_establishment">
         <h2>Endereço para retirada do pedido</h2>
         <iframe class="mapa" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d49510816.39016882!2d-152.0254347!3d40.764215000000014!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c258f9e15bf1c1%3A0xafe511716724bf3f!2sburger%20joint!5e0!3m2!1sen!2sbr!4v1758062150655!5m2!1sen!2sbr" width="450" height="200" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-        <p>Oswaldo Moretti 151 Jardim Frei Aurelio - Garça-SP</p>
+        <p>Oswaldo Moretti 000 Jardim - Garça-SP</p>
     </div>
     <form class="forma_de_pagamento" id="form-pay">
         <h2>Forma de pagamento</h2>
@@ -72,7 +72,7 @@ modalBody.innerHTML = `
         <img src="img/cartao/sinal.png"> 
         </div> 
         <h4 class="nome_cartao">Nome completo</h4> 
-        <h4 class="num_cartao">3456789098765432</h4> 
+        <h4 class="num_cartao">**** **** **** *****</h4> 
         <div class="sep-textos"> 
         <p>XX/XX</p> <p>XXX</p> 
         </div> 
