@@ -5,7 +5,8 @@ import { URL_BASE_API } from "./domain.js";
 import { confirmValuesCreditCard } from "./pay.js";
 import { confirmarPedido } from "./confirmar.js";
 import { consultaCEP } from "./endereco.js";
-
+import { sincronia_card } from "./cartao.js";
+import { atualizarVisibilidadeEndereco, ligarListenerSelectEntrega } from "./select_entrega.js";
 
 export function buttonInformations() {
 const buttons = document.querySelectorAll(".button-comprar");
@@ -71,10 +72,10 @@ modalBody.innerHTML = `
         <img src="img/cartao/chip.png"> 
         <img src="img/cartao/sinal.png"> 
         </div> 
-        <h4 class="nome_cartao">Nome completo</h4> 
-        <h4 class="num_cartao">**** **** **** *****</h4> 
+        <h4 id="card_name" class="nome_cartao">Nome completo</h4> 
+        <h4 id="card_number" class="num_cartao">**** **** **** *****</h4> 
         <div class="sep-textos"> 
-        <p>XX/XX</p> <p>XXX</p> 
+        <p id="card_date" >XX/XX</p> <p id="card_code">XXX</p> 
         </div> 
         </div> 
         </section>
@@ -96,31 +97,8 @@ modalBody.innerHTML = `
     </form>
 `;
 
-const sendMethodSelect = modalBody.querySelector('#send_method');
-const cepCard = modalBody.querySelector('.cep-card');
-const enderecoEstablishment = modalBody.querySelector('.endereco_establishment');
-
-function atualizarVisibilidadeEndereco() {
-  const val = sendMethodSelect?.value;
-  if (val === 'delivery') {
-    if (cepCard) cepCard.style.display = 'block';
-    if (enderecoEstablishment) enderecoEstablishment.style.display = 'none';
-    const cepInput = modalBody.querySelector('#cep');
-    if (cepInput) cepInput.focus();
-  } else if (val === 'establishment') {
-    if (cepCard) cepCard.style.display = 'none';
-    if (enderecoEstablishment) enderecoEstablishment.style.display = 'flex';
-  } else {
-    if (cepCard) cepCard.style.display = 'none';
-    if (enderecoEstablishment) enderecoEstablishment.style.display = 'flex';
-  }
-}
-
-atualizarVisibilidadeEndereco();
-
-if (sendMethodSelect) {
-  sendMethodSelect.addEventListener('change', atualizarVisibilidadeEndereco);
-}
+atualizarVisibilidadeEndereco(modalBody);
+ligarListenerSelectEntrega(modalBody);
 
 const buttonBuscarCEP = modalBody.querySelector('#buscar-cep');
 buttonBuscarCEP.addEventListener('click', (e) => {
@@ -151,6 +129,7 @@ return;
 confirmValuesCreditCard(productId);
 };
 
+sincronia_card(modalBody);
 
 modal.style.display = "flex";
 document.body.style.overflow = "hidden";
