@@ -7,6 +7,7 @@ import { confirmarPedido } from "./confirmar.js";
 import { consultaCEP } from "./endereco.js";
 import { sincronia_card } from "./cartao.js";
 import { atualizarVisibilidadeEndereco, ligarListenerSelectEntrega } from "./select_entrega.js";
+import { rigth_alert } from "./services.js";
 
 export function buttonInformations() {
 const buttons = document.querySelectorAll(".button-comprar");
@@ -113,8 +114,8 @@ buttonConfirm.disabled = !!data.cooking;
 getOptionsDelivery(id);
 
 buttonConfirm.onclick = () => {
-const productId = buttonConfirm.dataset.productid;
-if (data.cooking) return;
+    const productId = buttonConfirm.dataset.productid;
+    if (data.cooking) return;
 
 
 if (data.delivering) {

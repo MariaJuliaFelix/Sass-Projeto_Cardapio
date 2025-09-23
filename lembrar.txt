@@ -4,13 +4,13 @@ Responsivo;
 
 Data formatada automatica; 
 
-utilizar API no CEP para que encontre o endereço da pessoa automaticamente; feitooo
+utilizar API no CEP para que encontre o endereço da pessoa automaticamente; <check>
 
-Colocar o check na hora que for confirmar pedido, após ele ser entregue;
+Colocar o check na hora que for confirmar pedido, após ele ser entregue; <check>
 
 Não esquecer de colocar sobre os pedidos inválidos;
 
-Fazer com que os dados do cartão vão acompanhando o cartão.
+Fazer com que os dados do cartão vão acompanhando o cartão. <check>
 
 Fazer ligação com whatsapp
 

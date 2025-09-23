@@ -1,3 +1,4 @@
+
 export function validarStatusDeliveryMenu(item) {
   if (!item) return "Item inválido";
 
@@ -45,3 +46,22 @@ export function date_format(value) {
 
   return formatter.format(date); 
 }
+
+export function rigth_alert(){
+  
+  Swal.fire({
+  title: "Pedido concluido!",
+  text: "Você está com o pedido em mãos, aproveite!",
+  icon: "success"
+});
+}
+
+export function error_alert(){
+  
+ Swal.fire({
+  icon: "error",
+  title: "Erro",
+  text: "Tente novamente!",
+});
+}
+

@@ -1,5 +1,6 @@
 import { URL_BASE_API } from "./domain.js";
 import { getMenu } from "./listMenu.js";
+import { error_alert, rigth_alert } from "./services.js";
 
 export async function confirmarPedido(itemId) {
   try {
@@ -12,7 +13,7 @@ export async function confirmarPedido(itemId) {
       body: null
     });
 
-    if (!response.ok) throw new Error("Erro ao confirmar pedido");
+    if (!response.ok) throw new Error("Erro ao confirmar pedido", error_alert());
 
     const card = document.getElementById(`card-${itemId}`);
     if (card) {
@@ -22,21 +23,10 @@ export async function confirmarPedido(itemId) {
     }
 
     getMenu();
-
+    rigth_alert();
     console.log("Pedido confirmado (usuário):", itemId);
   }
   catch (erro) {
     console.error("Erro na requisição:", erro);
   }
 }
-
-
-
-// Swal.fire({
-//   title: "Confirmar pedido!",
-//   icon: "success",
-//   draggable: true
-// });
-
-// //button_confirm 
-// lemrar de colocar quando o loop já tiver ocorrido e o pedido já ter chego não esquecerrr de formatar a data!!!!!!!!

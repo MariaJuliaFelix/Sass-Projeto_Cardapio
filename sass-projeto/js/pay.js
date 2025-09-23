@@ -1,5 +1,6 @@
 import { URL_BASE_API } from "./domain.js";
 import { getMenu } from "./listMenu.js"; 
+import { error_alert, rigth_alert } from "./services.js";
 const showErro = (field, errorText) => {
   field.classList.add("erro");
   const errorElement = document.createElement("small");
@@ -93,6 +94,7 @@ export async function confirmValuesCreditCard(idProduct) {
       const errorData = await response.json();
       console.error("Erro do servidor:", errorData);
       alert(`Erro: ${errorData.message || "Não foi possível processar o pagamento"}`);
+      error_alert()
       return;
     }
 
@@ -111,6 +113,7 @@ export async function confirmValuesCreditCard(idProduct) {
     getMenu();
 
     alert("Pagamento realizado com sucesso!");
+    rigth_alert()
   } catch (error) {
     console.error("Erro ao processar pagamento:", error);
     alert("Ocorreu um erro na comunicação com o servidor.");

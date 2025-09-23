@@ -1,9 +1,0 @@
-node_modules/
-
-.vscode/
-
-css/style.css.map
-
-(Insomnia Import)*
-*.insomnia/
-*.insomnia.json
