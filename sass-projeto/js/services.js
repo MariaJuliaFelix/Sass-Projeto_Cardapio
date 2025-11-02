@@ -1,21 +1,24 @@
 
 export function validarStatusDeliveryMenu(item) {
   if (!item) return "Item inválido";
-
-  if (item.cooking) return "Preparando pedido...";
-  if (item.delivering) return "Acompanhar pedido";
-
+  
+  if (item.available === false) return "Indisponível";
+  if (item.cooking) return "Preparando...";
+  if (item.delivering) return "Acompanhar";
+  
   return "Comprar";
 }
 
 export function informationStatus(item) {
+  if (item.available === false) return "Produto temporariamente indisponível";
   if (item.cooking) return "Seu pedido está sendo preparado";
   if (item.delivering) {
-    if (item.type_delivering === "delivery") return "Pedido saiu para entrega";
-    if (item.type_delivering === "establishment") return "Aguardando retirada no estabelecimento";
+    if (item.type_delivering === "delivery") return "📍 Pedido saiu para entrega";
+    if (item.type_delivering === "establishment") return "🏪 Aguardando retirada";
   }
   return "";
 }
+
 
 export function validarTypeDeliveryModal(item) {
   if (!item) return "Item inválido";

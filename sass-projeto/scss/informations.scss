@@ -180,7 +180,305 @@ form small {
     color: #444;
 }
 
-.cep-card{
-  background-color: #575757;
-  padding: 10px
+.cep-card {
+  background: #f8f9fa;
+  border-radius: 12px;
+  padding: 30px;
+  margin: 15px 0;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
+  border: 1px solid #e9ecef;
+  
+  h3 {
+    color: #2d3748;
+    font-size: 1.3rem;
+    font-weight: 600;
+    margin-bottom: 15px;
+    text-align: left;
+  }
+  
+  form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+  
+  label {
+    color: #4a5568;
+    font-weight: 500;
+    font-size: 0.9rem;
+    margin-bottom: 4px;
+    display: block;
+  }
+  
+  input {
+    width: 90%;
+    padding: 12px 14px;
+    border: 1px solid #e2e8f0;
+    border-radius: 8px;
+    font-size: 14px;
+    background: white;
+    transition: all 0.2s ease;
+    
+    &:focus {
+      outline: none;
+      border-color: #fe7743;
+      background: white;
+      box-shadow: 0 0 0 2px rgba(254, 119, 67, 0.1);
+    }
+    
+    &::placeholder {
+      color: #a0aec0;
+    }
+  }
+  
+  .cep-group {
+    display: flex;
+    justify-content: space-between;
+    width: 95%;
+    align-items: flex-end;
+    
+    #cep {
+      flex: 1;
+      width: 150%;
+    }
+    
+    #buscar-cep {
+      flex-shrink: 0;
+      padding: 13px 16px;
+      background: #fe7743;
+      color: white;
+      border: none;
+      border-radius: 8px;
+      font-weight: 400;
+      font-size: 13px;
+      cursor: pointer;
+      transition: all 0.2s ease;
+      
+      &:hover {
+        background: #ff8c5a;
+        transform: translateY(-1px);
+      }
+      
+      &:active {
+        transform: translateY(0);
+      }
+    }
+  }
+  
+  body.dark & {
+    background: #2d3748;
+    border-color: #4a5568;
+    
+    h3 {
+      color: #e2e8f0;
+    }
+    
+    label {
+      color: #cbd5e0;
+    }
+    
+    input {
+      background: #1a202c;
+      border-color: #4a5568;
+      color: #e2e8f0;
+      
+      &:focus {
+        border-color: #fe7743;
+      }
+      
+      &::placeholder {
+        color: #718096;
+      }
+    }
+    
+    #buscar-cep {
+      background: #fe7743;
+      
+      &:hover {
+        background: #ff8c5a;
+      }
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .cep-card {
+    padding: 16px;
+    margin: 12px 0;
+    
+    .cep-group {
+      flex-direction: column;
+      gap: 8px;
+      
+      #buscar-cep {
+        width: 100%;
+      }
+    }
+    
+    input {
+      padding: 10px 12px;
+    }
+  }
+}
+
+// MODAL APP DELIVERY
+.delivery-confirmation {
+  text-align: center;
+  padding: 20px;
+  max-width: 400px;
+  margin: 0 auto;
+}
+
+.delivery-header {
+  margin-bottom: 2rem;
+  
+  .delivery-icon {
+    font-size: 4rem;
+    margin-bottom: 1rem;
+    animation: bounce 2s infinite;
+  }
+  
+  h2 {
+    color: #28a745;
+    font-size: 1.8rem;
+    margin-bottom: 0.5rem;
+    font-weight: 700;
+  }
+  
+  .delivery-subtitle {
+    color: #6c757d;
+    font-size: 1.1rem;
+  }
+}
+
+.order-card {
+  display: flex;
+  align-items: center;
+  background: #f8f9fa;
+  border-radius: 15px;
+  padding: 1rem;
+  margin-bottom: 2rem;
+  border: 2px solid #e9ecef;
+  
+  .order-image {
+    width: 80px;
+    height: 80px;
+    border-radius: 10px;
+    object-fit: cover;
+    margin-right: 1rem;
+  }
+  
+  .order-info {
+    text-align: left;
+    flex: 1;
+    
+    h3 {
+      font-size: 1.1rem;
+      margin-bottom: 0.5rem;
+      color: #333;
+    }
+    
+    .order-price {
+      font-size: 1.2rem;
+      font-weight: bold;
+      color: #FF6202;
+      margin-bottom: 0.5rem;
+    }
+    
+    .order-status {
+      font-size: 0.9rem;
+      color: #28a745;
+      font-weight: 500;
+    }
+  }
+}
+
+.confirm-delivery-btn {
+  background: linear-gradient(135deg, #28a745, #20c997);
+  color: white;
+  border: none;
+  padding: 1rem 2rem;
+  border-radius: 50px;
+  font-size: 1.1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  width: 100%;
+  margin-bottom: 1rem;
+  box-shadow: 0 4px 15px rgba(40, 167, 69, 0.3);
+  
+  &:hover:not(:disabled) {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(40, 167, 69, 0.4);
+  }
+  
+  &:disabled {
+    opacity: 0.7;
+    cursor: not-allowed;
+  }
+  
+  .btn-icon {
+    margin-right: 0.5rem;
+  }
+}
+
+.confirmation-message {
+  background: #e7f3ff;
+  border: 1px solid #b3d9ff;
+  border-radius: 10px;
+  padding: 1rem;
+  margin-bottom: 1.5rem;
+  
+  p {
+    color: #0066cc;
+    font-weight: 500;
+    margin: 0;
+  }
+}
+
+.delivery-note {
+  color: #6c757d;
+  font-size: 0.9rem;
+  font-style: italic;
+  margin-top: 1rem;
+}
+
+// ANIMAÇÕES
+@keyframes bounce {
+  0%, 20%, 50%, 80%, 100% {
+    transform: translateY(0);
+  }
+  40% {
+    transform: translateY(-10px);
+  }
+  60% {
+    transform: translateY(-5px);
+  }
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.05);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+// DARK MODE PARA DELIVERY
+body.dark {
+  .delivery-confirmation {
+    .order-card {
+      background: #2d3748;
+      border-color: #4a5568;
+    }
+    
+    .confirmation-message {
+      background: #2a4365;
+      border-color: #3182ce;
+    }
+  }
 }

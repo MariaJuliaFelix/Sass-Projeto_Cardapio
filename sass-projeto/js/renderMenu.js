@@ -1,25 +1,49 @@
 import { price, validarStatusDeliveryMenu, informationStatus } from "./services.js";
 
 export function renderMenu(items) {
+  console.log("🎯 Renderizando menu visual:", items);
+  const containerMenu = document.querySelector("#container_menu");
+  if (!containerMenu) {
+    console.log("❌ Container #container_menu não encontrado!");
+    return;
+  }
 
-console.log("Itens recebidos:", items);
-const containerMenu = document.querySelector("#container_menu");
-if (!containerMenu) return;
+  containerMenu.innerHTML = items.map(item => {
+    const status = validarStatusDeliveryMenu(item);
+    const emPromocao = item.promotion === true;
+    const indisponivel = item.available === false;
+    
+    // Calcular desconto de 20% para promoções
+    const precoPromocional = emPromocao ? (item.price * 0.8).toFixed(2) : null;
 
+    // Classes CSS baseadas no estado
+    let classeCSS = '';
+    if (indisponivel) classeCSS = 'indisponivel';
+    if (emPromocao) classeCSS = 'promocao';
 
-containerMenu.innerHTML = items.map(item => {
-const status = validarStatusDeliveryMenu(item);
-return (
-`
-<div class="card-menu" id="card-${item.id}" data-product-id="${item.id}"
-data-has-order="${!!item.hasOrder}" data-cooking="${!!item.cooking}"
-data-delivering="${!!item.delivering}" data-type-delivery="${item.type_delivering || ''}">
-<img src="${item.url_banner}" alt="${item.description}">
-<p class="descricao">${item.description}</p>
-<p class="valor">${price(item.price)}</p>
-<span class="status-info">${informationStatus(item)}</span>
-<button ${item.cooking ? "disabled" : ""} class="button-comprar" data-id="${item.id}">${status}</button>
-</div>`
-)
-}).join("");
+    return `
+      <div class="card-menu ${classeCSS}" id="card-${item.id}">
+        ${emPromocao ? `<div class="badge-desconto">-20%</div>` : ''}
+        
+        <img src="${item.url_banner}" alt="${item.description}">
+        
+        <p class="descricao">${item.description}</p>
+        
+        <div class="valor">
+          ${emPromocao ? `
+            <span class="preco-original">${price(item.price)}</span>
+            <span class="preco-promocao">${price(precoPromocional)}</span>
+          ` : price(item.price)}
+        </div>
+        
+        <span class="status-info">${informationStatus(item)}</span>
+        
+        <button class="button-comprar ${classeCSS}" data-id="${item.id}">
+          ${status}
+        </button>
+      </div>
+    `;
+  }).join("");
+
+  console.log("✅ Menu renderizado visualmente!");
 }

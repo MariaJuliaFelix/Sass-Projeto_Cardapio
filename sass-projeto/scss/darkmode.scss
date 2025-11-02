@@ -1,38 +1,318 @@
+// DARK MODE MELHORADO
 .trilho {
   width: 60px;
   height: 30px;
-  background-color: #c3c3c3;
+  background: linear-gradient(135deg, #c3c3c3, #a0a0a0);
   border-radius: 150px;
   position: relative;
   cursor: pointer;
+  transition: all 0.3s ease;
+  border: 2px solid transparent;
 
   .indicador {
-    width: 30px;
-    height: 30px;
-    background-color: #fff;
+    width: 26px;
+    height: 26px;
+    background: linear-gradient(135deg, #fff, #f0f0f0);
     border-radius: 50%;
-    transform: scale(0.9);
     position: absolute;
-    left: 0;
-    transition: 0.5s;
+    top: 2px;
+    left: 2px;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
   }
 
-  .trilho.dark {
-    background-color: #4d4d4d;
+  &:hover {
+    transform: scale(1.05);
+  }
+
+  &.dark {
+    background: linear-gradient(135deg, #4a5568, #2d3748);
+    border-color: #718096;
 
     .indicador {
-      left: 30px;
-      background-color: black;
+      left: 32px;
+      background: linear-gradient(135deg, #000, #2d3748);
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);
     }
   }
 }
 
-
 body.dark {
-  background-color: #000000; 
-  transition: all 0.3s ease;
+  background: linear-gradient(135deg, #0f0f0f, #1a1a1a);
+  color: #e2e8f0;
+  transition: all 0.4s ease;
 
-  h1{
-    color: #fff;
+  // HEADER
+  header {
+    background: linear-gradient(135deg, #1e1e1e, #2d2d2d);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.6);
+    
+    a {
+      color: #e2e8f0;
+      transition: color 0.3s ease;
+      
+      &:hover {
+        color: #fe7743;
+        text-decoration: none;
+      }
+    }
+    
+    .nav-menu {
+      background: linear-gradient(135deg, #1e1e1e, #2d2d2d);
+    }
+    
+    .headerHam span {
+      background: #e2e8f0;
+    }
+
+  }
+
+
+
+  // MAIN CONTENT
+  .titulo-cardapio {
+    color: #fe7743;
+    text-shadow: 0 2px 8px rgba(254, 119, 67, 0.3);
+  }
+
+  // CARDS DO MENU
+  .card-menu {
+    background: linear-gradient(135deg, #2d2d2d, #3d3d3d);
+    color: #e2e8f0;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
+    border: 1px solid #404040;
+
+    .descricao {
+      color: #e2e8f0;
+    }
+
+    .valor {
+      color: #fe7743;
+    }
+
+    .status-info {
+      color: #a0aec0;
+    }
+
+    // PROMOÇÃO NO DARK
+    &.promocao {
+      background: linear-gradient(135deg, #2d1a1a, #3d2a2a);
+      border: 2px solid #ff4444;
+      
+      &::before {
+        background: linear-gradient(135deg, #ff4444, #ff6b6b);
+      }
+    }
+
+    // INDISPONÍVEL NO DARK
+    &.indisponivel {
+      background: linear-gradient(135deg, #1a1a1a, #2a2a2a);
+      border: 1px solid #404040;
+      opacity: 0.6;
+      
+      .descricao, .valor {
+        color: #718096;
+      }
+    }
+
+    // PREPARANDO NO DARK
+    &.preparando {
+      background: linear-gradient(135deg, #2d2a1a, #3d3a2a);
+      border: 2px solid #ffa500;
+    }
+
+    // ENTREGANDO NO DARK
+    &.entregando {
+      background: linear-gradient(135deg, #1a2d1a, #2a3d2a);
+      border: 2px solid #28a745;
+    }
+
+    // RETIRADA NO DARK
+    &.retirada {
+      background: linear-gradient(135deg, #1a2a2d, #2a3a3d);
+      border: 2px solid #17a2b8;
+    }
+  }
+
+  // BOTÕES
+  .button-comprar {
+    &.promocao {
+      background: linear-gradient(135deg, #ff4444, #ff6b6b);
+    }
+
+    &.indisponivel {
+      background: linear-gradient(135deg, #4a5568, #718096);
+      color: #a0aec0;
+    }
+
+    &.preparando {
+      background: linear-gradient(135deg, #ffa500, #ffb347);
+    }
+
+    &.entregando {
+      background: linear-gradient(135deg, #28a745, #20c997);
+    }
+
+    &.retirada {
+      background: linear-gradient(135deg, #17a2b8, #6f42c1);
+    }
+  }
+
+  // SEÇÃO SOBRE
+  .sobre {
+    background: linear-gradient(135deg, #1a1a1a, #2d2d2d);
+    
+    .conteudo h3 {
+      color: #fe7743;
+    }
+    
+    .conteudo p,
+    .conteudo .texto-destaque {
+      color: #e2e8f0;
+    }
+    
+    .card {
+      background: linear-gradient(135deg, #2d2d2d, #3d3d3d);
+      border: 1px solid #404040;
+      color: #e2e8f0;
+      
+      &:hover {
+        box-shadow: 0 6px 20px rgba(254, 119, 67, 0.2);
+      }
+    }
+  }
+
+  // SEÇÃO INSTAGRAM
+  .insta-img {
+    background: linear-gradient(135deg, #fe7743, #ff9a76);
+    
+    .image-wrapper::after {
+      background: rgba(0, 0, 0, 0.5);
+    }
+  }
+
+  // FOOTER
+  footer {
+    background: linear-gradient(135deg, #1e1e1e, #2d2d2d);
+    color: #e2e8f0;
+    
+    .footer-menu a {
+      color: #e2e8f0;
+      
+      &:hover {
+        color: #fe7743;
+      }
+    }
+    
+    .footer-socials a {
+      background: linear-gradient(135deg, #3d3d3d, #4d4d4d);
+      
+      &:hover {
+        background: linear-gradient(135deg, #fe7743, #ff9a76);
+      }
+    }
+    
+    .footer-credit {
+      color: #a0aec0;
+    }
+  }
+
+  // MODAL
+  .modal-content {
+    background: linear-gradient(135deg, #2d2d2d, #3d3d3d);
+    color: #e2e8f0;
+    border: 1px solid #404040;
+  }
+
+  .fechar {
+    color: #e2e8f0;
+    
+    &:hover {
+      color: #fe7743;
+    }
+  }
+
+  // FORMULÁRIOS
+  .forma_de_pagamento {
+    background: linear-gradient(135deg, #2d2d2d, #3d3d3d);
+    color: #e2e8f0;
+  }
+
+  .cartao input,
+  .select-lista select {
+    background: linear-gradient(135deg, #3d3d3d, #4d4d4d);
+    color: #e2e8f0;
+    border: 1px solid #555;
+    
+    &::placeholder {
+      color: #a0aec0;
+    }
+    
+    &:focus {
+      border-color: #fe7743;
+      background: linear-gradient(135deg, #4d4d4d, #5d5d5d);
+      box-shadow: 0 0 10px rgba(254, 119, 67, 0.3);
+    }
+  }
+
+  // DELIVERY CONFIRMATION
+  .delivery-confirmation {
+    .order-card {
+      background: linear-gradient(135deg, #3d3d3d, #4d4d4d);
+      border: 1px solid #555;
+    }
+    
+    .confirmation-message {
+      background: linear-gradient(135deg, #2a4365, #3182ce);
+      border: 1px solid #4299e1;
+    }
+  }
+
+  // BANNER (manter qualidade)
+  .banner {
+    img {
+      filter: brightness(0.8) contrast(1.1);
+    }
+  }
+
+  // TÍTULOS E TEXTO
+  h1, h2, h3, h4, h5, h6 {
+    color: #e2e8f0;
+  }
+
+  p, span, li {
+    color: #cbd5e0;
+  }
+
+  // LINKS
+  a {
+    color: #fe7743;
+    
+    &:hover {
+      color: #ff9a76;
+    }
+  }
+}
+
+// ANIMAÇÃO SUAVE PARA TRANSição
+body {
+  transition: all 0.4s ease;
+}
+
+// MELHORAR CONTRASTE E LEGIBILIDADE
+body.dark {
+  * {
+    &::-webkit-scrollbar {
+      width: 8px;
+    }
+    
+    &::-webkit-scrollbar-track {
+      background: #2d2d2d;
+    }
+    
+    &::-webkit-scrollbar-thumb {
+      background: #fe7743;
+      border-radius: 4px;
+    }
   }
 }

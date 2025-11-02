@@ -22,7 +22,6 @@
     margin-right: 4rem;
     z-index: 1;
     position: relative;
-    background-color: #FBF8EF;
 }
 
 .card-menu {
@@ -80,3 +79,102 @@
     transition: all 0.3s ease; 
     cursor: pointer; 
 }
+
+.card-menu {
+  background-color: white;
+  border-radius: 10px;
+  padding: 15px;
+  width: 290px;
+  height: 330px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  transition: transform 0.3s ease;
+  position: relative;
+  overflow: hidden;
+
+  &.promocao {
+    border: 2px solid #FF4444;
+    background: linear-gradient(135deg, #fff, #fff5f5);
+    
+    &::before {
+      content: "PROMOÇÃO";
+      position: absolute;
+      top: 20px;
+      left: -30px;
+      background: #FF4444;
+      color: white;
+      padding: 5px 30px;
+      font-size: 12px;
+      font-weight: bold;
+      transform: rotate(-45deg);
+      box-shadow: 0 2px 8px rgba(255, 68, 68, 0.3);
+    }
+  }
+
+  &.indisponivel {
+    background-color: #f8f8f833;
+    border: 2px dashed #ccc;
+    opacity: 0.7;
+    
+    img {
+      filter: grayscale(60%);
+      opacity: 0.7;
+    }
+    
+    .descricao, .valor {
+      color: #313131;
+    }
+
+    .status-info{
+        display: none;
+    }
+  }
+}
+
+.badge-desconto {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: linear-gradient(135deg, #FF4444, #FF6B6B);
+  color: white;
+  padding: 4px 8px;
+  border-radius: 12px;
+  font-size: 12px;
+  font-weight: bold;
+  z-index: 2;
+  box-shadow: 0 2px 8px rgba(255, 68, 68, 0.3);
+}
+
+.preco-original {
+  text-decoration: line-through;
+  color: #888;
+  font-size: 14px;
+  margin-right: 8px;
+}
+
+.preco-promocao {
+  color: #FF4444;
+  font-weight: bold;
+  font-size: 18px;
+}
+
+.button-comprar.promocao {
+  background: linear-gradient(135deg, #FF4444, #FF6B6B);
+  color: white;
+  font-weight: bold;
+  border: none;
+}
+
+.button-comprar.indisponivel {
+  background-color: #cccccc16;
+  color: #666666;
+  cursor: not-allowed;
+  
+  &:hover {
+    background-color: #ccccccb4;
+    transform: none;
+  }
+}
+

@@ -1,9 +1,9 @@
 import { URL_BASE_API } from "./domain.js";
-import { getMenu } from "./listMenu.js";
-import { error_alert, rigth_alert } from "./services.js";
 
 export async function confirmarPedido(itemId) {
   try {
+    console.log(`🔍 Tentando confirmar pedido ${itemId}...`);
+    
     const response = await fetch(`${URL_BASE_API}/restaurant/product/confirm/${itemId}`, {
       method: "PATCH",
       headers: {
@@ -13,20 +13,26 @@ export async function confirmarPedido(itemId) {
       body: null
     });
 
-    if (!response.ok) throw new Error("Erro ao confirmar pedido", error_alert());
-
-    const card = document.getElementById(`card-${itemId}`);
-    if (card) {
-      card.dataset.hasOrder = "false";
-      card.dataset.cooking = "false";
-      card.dataset.delivering = "false";
+    console.log(`📡 Status da resposta: ${response.status}`);
+    
+    // Se a resposta for OK (200-299), considera sucesso
+    if (response.ok) {
+      console.log("✅ Pedido confirmado com sucesso!");
+      return true; // Retorna sucesso
+    } else {
+      console.log(`❌ Erro HTTP: ${response.status}`);
+      // Mesmo com erro HTTP, tenta processar a resposta
+      try {
+        const errorData = await response.json();
+        console.log("📦 Dados do erro:", errorData);
+      } catch (e) {
+        console.log("📦 Resposta de erro não é JSON");
+      }
+      return false; // Retorna falha
     }
-
-    getMenu();
-    rigth_alert();
-    console.log("Pedido confirmado (usuário):", itemId);
-  }
-  catch (erro) {
-    console.error("Erro na requisição:", erro);
+    
+  } catch (erro) {
+    console.error("❌ Erro na confirmação:", erro);
+    return false; // Retorna falha
   }
 }
