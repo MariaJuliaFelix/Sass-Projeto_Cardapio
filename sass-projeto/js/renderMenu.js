@@ -1,10 +1,10 @@
 import { price, validarStatusDeliveryMenu, informationStatus } from "./services.js";
 
 export function renderMenu(items) {
-  console.log("🎯 Renderizando menu visual:", items);
+  console.log("Renderizando menu visual:", items);
   const containerMenu = document.querySelector("#container_menu");
   if (!containerMenu) {
-    console.log("❌ Container #container_menu não encontrado!");
+    console.log(" Container #container_menu não encontrado!");
     return;
   }
 
@@ -13,10 +13,8 @@ export function renderMenu(items) {
     const emPromocao = item.promotion === true;
     const indisponivel = item.available === false;
     
-    // Calcular desconto de 20% para promoções
     const precoPromocional = emPromocao ? (item.price * 0.8).toFixed(2) : null;
 
-    // Classes CSS baseadas no estado
     let classeCSS = '';
     if (indisponivel) classeCSS = 'indisponivel';
     if (emPromocao) classeCSS = 'promocao';
@@ -45,5 +43,5 @@ export function renderMenu(items) {
     `;
   }).join("");
 
-  console.log("✅ Menu renderizado visualmente!");
+  console.log(" Menu renderizado visualmente!");
 }

@@ -13,8 +13,8 @@ export function informationStatus(item) {
   if (item.available === false) return "Produto temporariamente indisponível";
   if (item.cooking) return "Seu pedido está sendo preparado";
   if (item.delivering) {
-    if (item.type_delivering === "delivery") return "📍 Pedido saiu para entrega";
-    if (item.type_delivering === "establishment") return "🏪 Aguardando retirada";
+    if (item.type_delivering === "delivery") return "Pedido saiu para entrega";
+    if (item.type_delivering === "establishment") return "Aguardando retirada";
   }
   return "";
 }

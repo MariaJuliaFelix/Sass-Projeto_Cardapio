@@ -321,7 +321,6 @@ form small {
   }
 }
 
-// MODAL APP DELIVERY
 .delivery-confirmation {
   text-align: center;
   padding: 20px;
@@ -443,7 +442,6 @@ form small {
   margin-top: 1rem;
 }
 
-// ANIMAÇÕES
 @keyframes bounce {
   0%, 20%, 50%, 80%, 100% {
     transform: translateY(0);
@@ -468,7 +466,6 @@ form small {
   }
 }
 
-// DARK MODE PARA DELIVERY
 body.dark {
   .delivery-confirmation {
     .order-card {

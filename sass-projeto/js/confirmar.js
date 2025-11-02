@@ -2,7 +2,7 @@ import { URL_BASE_API } from "./domain.js";
 
 export async function confirmarPedido(itemId) {
   try {
-    console.log(`🔍 Tentando confirmar pedido ${itemId}...`);
+    console.log(` Tentando confirmar pedido ${itemId}...`);
     
     const response = await fetch(`${URL_BASE_API}/restaurant/product/confirm/${itemId}`, {
       method: "PATCH",
@@ -15,24 +15,22 @@ export async function confirmarPedido(itemId) {
 
     console.log(`📡 Status da resposta: ${response.status}`);
     
-    // Se a resposta for OK (200-299), considera sucesso
     if (response.ok) {
-      console.log("✅ Pedido confirmado com sucesso!");
-      return true; // Retorna sucesso
+      console.log(" Pedido confirmado com sucesso!");
+      return true;
     } else {
-      console.log(`❌ Erro HTTP: ${response.status}`);
-      // Mesmo com erro HTTP, tenta processar a resposta
+      console.log(` Erro HTTP: ${response.status}`);
       try {
         const errorData = await response.json();
-        console.log("📦 Dados do erro:", errorData);
+        console.log(" Dados do erro:", errorData);
       } catch (e) {
-        console.log("📦 Resposta de erro não é JSON");
+        console.log(" Resposta de erro não é JSON");
       }
-      return false; // Retorna falha
+      return false; 
     }
     
   } catch (erro) {
-    console.error("❌ Erro na confirmação:", erro);
-    return false; // Retorna falha
+    console.error(" Erro na confirmação:", erro);
+    return false; 
   }
 }

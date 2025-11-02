@@ -24,7 +24,6 @@ export function buttonInformations() {
                 showLoading();
                 header.classList.add("hide");
 
-                // Buscar dados do produto
                 const response = await fetch(`${URL_BASE_API}/restaurant/product/${id}`, {
                     method: 'GET',
                     headers: {
@@ -37,7 +36,6 @@ export function buttonInformations() {
                 
                 const data = await response.json();
 
-                // VERIFICAÇÃO DE DISPONIBILIDADE
                 if (data.available === false) {
                     hideLoading();
                     header.classList.remove("hide");
@@ -49,7 +47,6 @@ export function buttonInformations() {
                     return;
                 }
 
-                // SE ESTÁ ENTREGANDO/RETIRANDO - MOSTRA CONFIRMAÇÃO APP DELIVERY
                 if (data.delivering) {
                     modalBody.innerHTML = `
                         <div class="delivery-confirmation">
@@ -105,26 +102,22 @@ export function buttonInformations() {
 
                     const confirmBtn = modalBody.querySelector(".confirm-delivery-btn");
                     confirmBtn.addEventListener("click", async () => {
-                        // Animação de loading no botão
-                        confirmBtn.innerHTML = '<span class="btn-icon">⏳</span> Confirmando...';
+                        confirmBtn.innerHTML = ' Confirmando...';
                         confirmBtn.disabled = true;
                         
                         try {
                             await confirmarPedido(data.id);
                             
-                            // Feedback visual de sucesso
                             confirmBtn.innerHTML = '<span class="btn-icon">🎉</span> Confirmado!';
                             confirmBtn.style.background = "#28a745";
                             
-                            // Fecha modal após 1.5 segundos
                             setTimeout(() => {
                                 closeModal();
-                                // Mostra alerta de sucesso
                                 Swal.fire({
                                     title: "Pedido Finalizado!",
                                     text: "Obrigado pela confirmação!",
                                     icon: "success",
-                                    confirmButtonText: "👍 Ótimo!"
+                                    confirmButtonText: "Ótimo!"
                                 });
                             }, 1500);
                             
@@ -144,7 +137,6 @@ export function buttonInformations() {
                     return;
                 }
 
-                // SE ESTÁ PREPARANDO - MOSTRA MODAL INFORMATIVO
                 if (data.cooking) {
                     modalBody.innerHTML = `
                         <div class="delivery-confirmation">
@@ -160,7 +152,7 @@ export function buttonInformations() {
                                     <div class="order-info">
                                         <h3>${data.description}</h3>
                                         <p class="order-price">${price(data.price)}</p>
-                                        <p class="order-status">♨️ Cozinha em ação!</p>
+                                        <p class="order-status">Cozinha em ação!</p>
                                     </div>
                                 </div>
                                 
@@ -187,7 +179,6 @@ export function buttonInformations() {
                     return;
                 }
 
-                // SE ESTÁ DISPONÍVEL - MOSTRA MODAL DE COMPRA NORMAL
                 modalBody.innerHTML = `
                     <h2>${data.description}</h2>
                     <img class="img-information" src="${data.url_banner}" alt="${data.description}">
@@ -263,7 +254,6 @@ export function buttonInformations() {
                     </form>
                 `;
 
-                // Configurar eventos para compra normal
                 atualizarVisibilidadeEndereco(modalBody);
                 ligarListenerSelectEntrega(modalBody);
 
@@ -277,19 +267,17 @@ export function buttonInformations() {
                 getOptionsDelivery(id);
                 sincronia_card(modalBody);
 
-                // Configurar clique do botão confirmar para compra
                 buttonConfirm.onclick = () => {
                     const productId = buttonConfirm.dataset.productid;
                     confirmValuesCreditCard(productId);
                 };
 
-                // Abrir modal
                 modal.style.display = "flex";
                 document.body.style.overflow = "hidden";
                 window.__modalOpen = true;
 
             } catch (erro) {
-                console.error("❌ Erro:", erro);
+                console.error(" Erro:", erro);
                 Swal.fire({
                     icon: "error",
                     title: "Erro",
@@ -302,7 +290,6 @@ export function buttonInformations() {
         };
     });
 
-    // Fechar modal
     function closeModal() {
         modal.style.display = "none";
         document.body.style.overflow = "";

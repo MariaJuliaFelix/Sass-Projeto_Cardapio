@@ -1,4 +1,4 @@
-// DARK MODE MELHORADO
+
 .trilho {
   width: 60px;
   height: 30px;
@@ -42,7 +42,6 @@ body.dark {
   color: #e2e8f0;
   transition: all 0.4s ease;
 
-  // HEADER
   header {
     background: linear-gradient(135deg, #1e1e1e, #2d2d2d);
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.6);
@@ -68,14 +67,11 @@ body.dark {
   }
 
 
-
-  // MAIN CONTENT
   .titulo-cardapio {
     color: #fe7743;
     text-shadow: 0 2px 8px rgba(254, 119, 67, 0.3);
   }
 
-  // CARDS DO MENU
   .card-menu {
     background: linear-gradient(135deg, #2d2d2d, #3d3d3d);
     color: #e2e8f0;
@@ -94,7 +90,6 @@ body.dark {
       color: #a0aec0;
     }
 
-    // PROMOÇÃO NO DARK
     &.promocao {
       background: linear-gradient(135deg, #2d1a1a, #3d2a2a);
       border: 2px solid #ff4444;
@@ -104,7 +99,6 @@ body.dark {
       }
     }
 
-    // INDISPONÍVEL NO DARK
     &.indisponivel {
       background: linear-gradient(135deg, #1a1a1a, #2a2a2a);
       border: 1px solid #404040;
@@ -115,26 +109,22 @@ body.dark {
       }
     }
 
-    // PREPARANDO NO DARK
     &.preparando {
       background: linear-gradient(135deg, #2d2a1a, #3d3a2a);
       border: 2px solid #ffa500;
     }
 
-    // ENTREGANDO NO DARK
     &.entregando {
       background: linear-gradient(135deg, #1a2d1a, #2a3d2a);
       border: 2px solid #28a745;
     }
 
-    // RETIRADA NO DARK
     &.retirada {
       background: linear-gradient(135deg, #1a2a2d, #2a3a3d);
       border: 2px solid #17a2b8;
     }
   }
 
-  // BOTÕES
   .button-comprar {
     &.promocao {
       background: linear-gradient(135deg, #ff4444, #ff6b6b);
@@ -158,7 +148,6 @@ body.dark {
     }
   }
 
-  // SEÇÃO SOBRE
   .sobre {
     background: linear-gradient(135deg, #1a1a1a, #2d2d2d);
     
@@ -182,7 +171,6 @@ body.dark {
     }
   }
 
-  // SEÇÃO INSTAGRAM
   .insta-img {
     background: linear-gradient(135deg, #fe7743, #ff9a76);
     
@@ -191,7 +179,6 @@ body.dark {
     }
   }
 
-  // FOOTER
   footer {
     background: linear-gradient(135deg, #1e1e1e, #2d2d2d);
     color: #e2e8f0;
@@ -217,7 +204,6 @@ body.dark {
     }
   }
 
-  // MODAL
   .modal-content {
     background: linear-gradient(135deg, #2d2d2d, #3d3d3d);
     color: #e2e8f0;
@@ -232,7 +218,6 @@ body.dark {
     }
   }
 
-  // FORMULÁRIOS
   .forma_de_pagamento {
     background: linear-gradient(135deg, #2d2d2d, #3d3d3d);
     color: #e2e8f0;
@@ -255,7 +240,6 @@ body.dark {
     }
   }
 
-  // DELIVERY CONFIRMATION
   .delivery-confirmation {
     .order-card {
       background: linear-gradient(135deg, #3d3d3d, #4d4d4d);
@@ -268,14 +252,12 @@ body.dark {
     }
   }
 
-  // BANNER (manter qualidade)
   .banner {
     img {
       filter: brightness(0.8) contrast(1.1);
     }
   }
 
-  // TÍTULOS E TEXTO
   h1, h2, h3, h4, h5, h6 {
     color: #e2e8f0;
   }
@@ -284,7 +266,6 @@ body.dark {
     color: #cbd5e0;
   }
 
-  // LINKS
   a {
     color: #fe7743;
     
@@ -294,12 +275,10 @@ body.dark {
   }
 }
 
-// ANIMAÇÃO SUAVE PARA TRANSição
 body {
   transition: all 0.4s ease;
 }
 
-// MELHORAR CONTRASTE E LEGIBILIDADE
 body.dark {
   * {
     &::-webkit-scrollbar {
