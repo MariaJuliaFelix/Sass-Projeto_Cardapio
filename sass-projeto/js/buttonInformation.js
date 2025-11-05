@@ -18,7 +18,7 @@ export function buttonInformations() {
     buttons.forEach(button => {
         button.onclick = async function () {
             const id = this.dataset.id;
-            console.log(`🔄 Clicou no produto ID: ${id}`);
+            console.log(` Clicou no produto ID: ${id}`);
             
             try {
                 showLoading();
@@ -71,8 +71,8 @@ export function buttonInformations() {
                                         <p class="order-price">${price(data.price)}</p>
                                         <p class="order-status">
                                             ${data.type_delivering === "delivery" 
-                                                ? "📦 Entregador aguardando na porta" 
-                                                : "🛍️ Aguardando na loja"
+                                                ? "Entregador aguardando na porta" 
+                                                : "Aguardando na loja"
                                             }
                                         </p>
                                     </div>
@@ -83,7 +83,6 @@ export function buttonInformations() {
                                 </div>
                                 
                                 <button class="confirm-delivery-btn" data-productid="${data.id}">
-                                    <span class="btn-icon">✅</span>
                                     ${data.type_delivering === "delivery" 
                                         ? "Confirmar Recebimento" 
                                         : "Confirmar Retirada"

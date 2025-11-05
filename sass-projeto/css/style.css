@@ -125,7 +125,7 @@ footer nav {
   justify-content: center;
   align-items: center;
   gap: 15rem;
-  height: 70vh;
+  height: 80vh;
   background-color: #FBF8EF;
   padding: 0 2rem;
 }
@@ -296,17 +296,17 @@ footer nav {
   }
   .nav-menu {
     position: absolute;
-    top: 50px;
-    left: 3px;
+    top: 60px;
+    left: 20px;
     background-color: #F5EBDC;
     flex-direction: column;
-    width: 250px;
+    width: 300px;
     padding: 10px;
     text-align: center;
     gap: 4px;
     display: none;
     box-shadow: rgba(56, 56, 56, 0.753) 1px 0px 10px 1px;
-    border-top-left-radius: 0%;
+    border-top-left-radius: 10px;
     border-bottom-left-radius: 10px;
     border-bottom-right-radius: 10px;
     border-top-right-radius: 10px;
@@ -852,20 +852,22 @@ h3 {
 }
 
 .button-finalizar {
-  background-color: rgba(254, 120, 67, 0.7137254902);
+  background: #fe7743;
+  color: white;
   padding: 10px 45px 10px 45px;
   text-align: center;
   justify-content: center;
-  border: solid rgba(0, 0, 0, 0.178) 1px;
+  border: solid rgba(0, 0, 0, 0.201) 1px;
   border-radius: 12px;
   font-size: 16px;
   width: 100%;
   margin-top: 1rem;
   margin-bottom: 1rem;
+  transition: all 0.2s ease;
 }
 
 .button-finalizar:hover {
-  background-color: #FE7743;
+  background: #ff8c5a;
   transform: scale(1.01);
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.115);
   transition: all 0.3s ease;
@@ -1004,8 +1006,8 @@ form small {
   transform: translateY(0);
 }
 body.dark .cep-card {
-  background: #2d3748;
-  border-color: #4a5568;
+  background: #39393a;
+  border-color: rgba(74, 85, 104, 0.0901960784);
 }
 body.dark .cep-card h3 {
   color: #e2e8f0;
@@ -1014,8 +1016,8 @@ body.dark .cep-card label {
   color: #cbd5e0;
 }
 body.dark .cep-card input {
-  background: #1a202c;
-  border-color: #4a5568;
+  background: #222;
+  border-color: #333;
   color: #e2e8f0;
 }
 body.dark .cep-card input:focus {
@@ -1292,6 +1294,9 @@ body.dark header .nav-menu {
 body.dark header .headerHam span {
   background: #e2e8f0;
 }
+body.dark .endereco_establishment {
+  background-color: #3f3f3f;
+}
 body.dark .titulo-cardapio {
   color: #fe7743;
   text-shadow: 0 2px 8px rgba(254, 119, 67, 0.3);
@@ -1364,19 +1369,27 @@ body.dark .sobre .conteudo p,
 body.dark .sobre .conteudo .texto-destaque {
   color: #e2e8f0;
 }
+body.dark .sobre .call .icon,
+body.dark .sobre .call .link {
+  color: #df603d;
+}
+body.dark .sobre .chat .icon,
+body.dark .sobre .chat .link {
+  color: #df603d;
+}
 body.dark .sobre .card {
   background: linear-gradient(135deg, #2d2d2d, #3d3d3d);
   border: 1px solid #404040;
   color: #e2e8f0;
 }
 body.dark .sobre .card:hover {
-  box-shadow: 0 6px 20px rgba(254, 119, 67, 0.2);
+  box-shadow: 0 6px 20px rgba(253, 93, 30, 0.147);
 }
 body.dark .insta-img {
-  background: linear-gradient(135deg, #fe7743, #ff9a76);
+  background: rgba(249, 109, 70, 0.7882352941);
 }
 body.dark .insta-img .image-wrapper::after {
-  background: rgba(0, 0, 0, 0.5);
+  background: rgba(0, 0, 0, 0.341);
 }
 body.dark footer {
   background: linear-gradient(135deg, #1e1e1e, #2d2d2d);
@@ -1395,7 +1408,7 @@ body.dark footer .footer-socials a:hover {
   background: linear-gradient(135deg, #fe7743, #ff9a76);
 }
 body.dark footer .footer-credit {
-  color: #a0aec0;
+  color: rgba(213, 104, 214, 0.262745098);
 }
 body.dark .modal-content {
   background: linear-gradient(135deg, #2d2d2d, #3d3d3d);
@@ -1409,7 +1422,7 @@ body.dark .fechar:hover {
   color: #fe7743;
 }
 body.dark .forma_de_pagamento {
-  background: linear-gradient(135deg, #2d2d2d, #3d3d3d);
+  background: #39393a;
   color: #e2e8f0;
 }
 body.dark .cartao input,
@@ -1425,8 +1438,8 @@ body.dark .select-lista select::placeholder {
 body.dark .cartao input:focus,
 body.dark .select-lista select:focus {
   border-color: #fe7743;
-  background: linear-gradient(135deg, #4d4d4d, #5d5d5d);
-  box-shadow: 0 0 10px rgba(254, 119, 67, 0.3);
+  background: #131313;
+  box-shadow: 0 0 10px rgba(254, 120, 67, 0.14);
 }
 body.dark .delivery-confirmation .order-card {
   background: linear-gradient(135deg, #3d3d3d, #4d4d4d);

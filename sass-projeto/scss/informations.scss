@@ -102,20 +102,22 @@ h3{
 
 
 .button-finalizar{
-    background-color: #fe7843b6;
+    background: #fe7743;
+    color: white;
     padding: 10px 45px 10px 45px;
     text-align: center;
     justify-content: center;
-    border: solid rgba(0, 0, 0, 0.178) 1px;
+    border: solid rgba(0, 0, 0, 0.201) 1px;
     border-radius: 12px;
     font-size: 16px;
     width: 100%;
     margin-top: 1rem;
     margin-bottom: 1rem;
+    transition: all 0.2s ease;
 }
 
 .button-finalizar:hover {
-    background-color: #FE7743; 
+    background: #ff8c5a;
     transform: scale(1.01); 
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.115);
     transition: all 0.3s ease; 
@@ -266,8 +268,8 @@ form small {
   }
   
   body.dark & {
-    background: #2d3748;
-    border-color: #4a5568;
+    background: #39393a;
+    border-color: #4a556817;
     
     h3 {
       color: #e2e8f0;
@@ -278,8 +280,8 @@ form small {
     }
     
     input {
-      background: #1a202c;
-      border-color: #4a5568;
+      background: #222;
+      border-color: #333;
       color: #e2e8f0;
       
       &:focus {

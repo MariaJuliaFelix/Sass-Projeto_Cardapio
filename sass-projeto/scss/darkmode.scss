@@ -67,6 +67,10 @@ body.dark {
   }
 
 
+.endereco_establishment{
+  background-color: #3f3f3f;
+}
+
   .titulo-cardapio {
     color: #fe7743;
     text-shadow: 0 2px 8px rgba(254, 119, 67, 0.3);
@@ -160,22 +164,33 @@ body.dark {
       color: #e2e8f0;
     }
     
+    .call .icon,
+    .call .link {
+      color: #df603d; 
+    }
+
+    .chat .icon,
+    .chat .link {
+      color: #df603d; 
+    }
+
+
     .card {
       background: linear-gradient(135deg, #2d2d2d, #3d3d3d);
       border: 1px solid #404040;
       color: #e2e8f0;
       
       &:hover {
-        box-shadow: 0 6px 20px rgba(254, 119, 67, 0.2);
+        box-shadow: 0 6px 20px rgba(253, 93, 30, 0.147);
       }
     }
   }
 
   .insta-img {
-    background: linear-gradient(135deg, #fe7743, #ff9a76);
+    background: #f96d46c9;
     
     .image-wrapper::after {
-      background: rgba(0, 0, 0, 0.5);
+      background: rgba(0, 0, 0, 0.341);
     }
   }
 
@@ -200,7 +215,7 @@ body.dark {
     }
     
     .footer-credit {
-      color: #a0aec0;
+      color: #d568d643;
     }
   }
 
@@ -219,7 +234,7 @@ body.dark {
   }
 
   .forma_de_pagamento {
-    background: linear-gradient(135deg, #2d2d2d, #3d3d3d);
+    background: #39393a;
     color: #e2e8f0;
   }
 
@@ -235,8 +250,8 @@ body.dark {
     
     &:focus {
       border-color: #fe7743;
-      background: linear-gradient(135deg, #4d4d4d, #5d5d5d);
-      box-shadow: 0 0 10px rgba(254, 119, 67, 0.3);
+      background: #131313;
+      box-shadow: 0 0 10px rgba(254, 120, 67, 0.14);
     }
   }
 

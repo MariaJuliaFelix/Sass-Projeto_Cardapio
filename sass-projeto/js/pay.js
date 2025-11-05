@@ -93,7 +93,6 @@ export async function confirmValuesCreditCard(idProduct) {
     if (!response.ok) {
       const errorData = await response.json();
       console.error("Erro do servidor:", errorData);
-      alert(`Erro: ${errorData.message || "Não foi possível processar o pagamento"}`);
       error_alert()
       return;
     }
@@ -112,7 +111,6 @@ export async function confirmValuesCreditCard(idProduct) {
 
     getMenu();
 
-    alert("Pagamento realizado com sucesso!");
     rigth_alert()
   } catch (error) {
     console.error("Erro ao processar pagamento:", error);
